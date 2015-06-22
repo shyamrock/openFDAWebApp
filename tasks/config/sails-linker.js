@@ -111,9 +111,12 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 			files: {
-				'.tmp/public/index.html': ['.tmp/public/min/production.min.css'],
-				'views/**/*.html': ['.tmp/public/min/production.min.css'],
-				'views/**/*.ejs': ['.tmp/public/min/production.min.css']
+				//'.tmp/public/index.html': ['.tmp/public/min/production.min.css'],
+				//'views/**/*.html': ['.tmp/public/min/production.min.css'],
+				//'views/**/*.ejs': ['.tmp/public/min/production.min.css']
+        '.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
+        'views/**/*.html': require('../pipeline').cssFilesToInject,
+        'views/**/*.ejs': require('../pipeline').cssFilesToInject
 			}
 		},
 
@@ -126,9 +129,12 @@ module.exports = function(grunt) {
 				relative: true
 			},
 			files: {
-				'.tmp/public/index.html': ['.tmp/public/min/production.min.css'],
-				'views/**/*.html': ['.tmp/public/min/production.min.css'],
-				'views/**/*.ejs': ['.tmp/public/min/production.min.css']
+				//'.tmp/public/index.html': ['.tmp/public/min/production.min.css'],
+				//'views/**/*.html': ['.tmp/public/min/production.min.css'],
+				//'views/**/*.ejs': ['.tmp/public/min/production.min.css']
+        '.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
+        'views/**/*.html': require('../pipeline').cssFilesToInject,
+        'views/**/*.ejs': require('../pipeline').cssFilesToInject
 			}
 		},
 
