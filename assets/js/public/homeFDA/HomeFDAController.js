@@ -1,4 +1,4 @@
 angular.module('openFDA').controller('HomeFDAController', function($scope){
 
-$scope.message ="Cool portal with Jenkins test";
+$scope.message ="openFDA Web App with CI Jenkins test";
 });
