@@ -14,6 +14,18 @@ before(function(done) {
   });
 });
 
+describe("QuerySearch", function() {
+  describe("search", function() {
+
+    it("returns some JSON", function(done) {
+      request(app).get("/").end(function(err, res) {
+        expect(res.text).to.be.a('string');
+        done();
+
+      });
+    });
+  });
+});
 /*describe("QuerySearch", function() {
   describe("search", function() {
 
