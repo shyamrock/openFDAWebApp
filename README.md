@@ -1,3 +1,3 @@
-# openFDAWebApp
+# openFDA Web App
 
-Web Application to search Food, Device and Drug Recalls.
+Web Application to search Food, Device and Drug Recall Data set.
