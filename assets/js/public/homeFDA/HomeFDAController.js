@@ -1,22 +1,5 @@
 angular.module('openFDA').controller('HomeFDAController', function($scope,$http){
 
-  $scope.tabs = [{
-    title: 'List',
-    url: 'one.tpl.html'
-  }, {
-    title: 'Graph',
-    url: 'two.tpl.html'
-  }, ];
-
-  $scope.currentTab = 'one.tpl.html';
-
-  $scope.onClickTab = function (tab) {
-    $scope.currentTab = tab.url;
-  }
-
-  $scope.isActiveTab = function(tabUrl) {
-    return tabUrl == $scope.currentTab;
-  }
 $scope.message ="openFDA Web App with CI Jenkins test";
 
   $scope.foods="";
