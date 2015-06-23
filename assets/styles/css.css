@@ -52,7 +52,7 @@ header {background:#424242;}
 header div {color:#fff; font-size:35px; text-align:left; padding:12px 12px 12px 45px;  font-family: 'Roboto Slab', serif;}
 
 
-.maincontainer {width:99%; height: auto;  margin:25px auto;}
+.maincontainer {width:93%; height: auto;  margin:25px auto;}
 .contentholder {
 background: rgba(236,236,236,1);
 background: -moz-linear-gradient(top, rgba(236,236,236,1) 0%, rgba(220,220,220,1) 100%);
@@ -150,3 +150,10 @@ input[type='text']
 }
 }
 
+input[type='button'] {-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 50px; background:#d5d5d5; border:solid 1px #666666; padding:5px; width:100px; font-family: 'Roboto Slab', serif; font-size:16px;}
+
+input[type='button']:hover {-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 50px; background:#428bca; border:solid 1px #1f70b5; padding:5px; width:100px; font-family: 'Roboto Slab', serif; color:#fff; font-size:16px;}
