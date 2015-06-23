@@ -27,7 +27,9 @@ var jsFilesToInject = [
   'js/dependencies/sails.io.js',
 
   // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
+  'js/dependencies/angular.min.js',
+  'js/dependencies/d3.min.js',
+  'js/dependencies/c3.min.js',
 
   'js/public/homeFDA/HomeFDAModule.js',
   // All of the rest of your client-side js files

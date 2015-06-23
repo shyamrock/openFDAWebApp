@@ -6,7 +6,7 @@ $scope.message ="openFDA Data Set View";
 
   $scope.searchText = function() {
 
-    alert("hai2"+$scope.selectType);
+    //alert("hai2"+$scope.selectType);
 
     console.log("...API_URL...."+$scope.searchText);
     var search=$scope.searchText;
@@ -22,5 +22,34 @@ $scope.message ="openFDA Data Set View";
         console.log("Error in frontend app :"+data);
       });
   }
+
+
+  $scope.options = {
+    data: [
+      {
+        sales: 130,
+        income: 250,
+        day:'Tuesday'
+      },
+      {
+        sales: 180,
+        income: 350,
+        day:'Monday'
+      },
+      {
+        sales: 100,
+        income: 450,
+        day:'Wednesday'
+      }
+    ],
+    dimensions: {
+      sales: {
+        type: 'bar'
+      },
+      income: {
+        axis: 'y2'
+      }
+    }
+  };
 
 });

@@ -1,1 +1,1 @@
-angular.module('openFDA', []);
+angular.module('openFDA', ['angularChart']);
