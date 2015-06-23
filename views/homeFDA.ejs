@@ -11,15 +11,145 @@
 
   <!--STYLES-->
   <link rel="stylesheet" href="/styles/bootstrap.css">
+  <link rel="stylesheet" href="/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/css.css">
+  <link rel="stylesheet" href="/styles/css_menu_style.css">
   <link rel="stylesheet" href="/styles/importer.css">
   <!--STYLES END-->
 </head>
 
 <body ng-controller="HomeFDAController" ng-cloak>
 
-<h1> Welcome to openFDA</h1>
 
-<h2>{{message}}</h2>
+<div class="page-wrap">
+  <header>
+    <div>Recalls <h1> Welcome to openFDA</h1></div>
+  </header>
+  <div class="clearfix"></div>
+  <div class="maincontainer">
+
+    <div class="contentholder">
+      <h2>{{message}}</h2>
+      <p class="head" style="padding-top:20px;">Start Searching Now!</p>
+      <div class="col-lg-12 txt_center"><img src="/images/search.png" ></div>
+      <div class="col-lg-12" style="margin:20px 0px">
+        <ul>
+          <li class="col-lg-2 col-xs-12 text txt_center">Search</li>
+          <li class="col-lg-3 col-xs-12 text ">
+
+            <!--<select name="">-->
+            <!--<option>select 1</option>-->
+            <!--</select></li>-->
+
+            <select id="searchtype" ng-model="selectType" name="searchtype">
+              <option value="">Select Tool</option>
+              <option value="device">Device Recalls</option>
+              <option value="drug">Drug Recalls</option>
+              <option value="food">Food Recalls</option>
+            </select>
+
+
+          <li class="col-lg-2 col-xs-12 text txt_center">For</li>
+
+          <li class="col-lg-5 col-xs-12 text">
+            <input name="" ng-model="searchItem" type="text" value="Enter Your Search Item">
+          </li>
+
+        </ul>
+
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-lg-12 txt_center" style="margin:20px 0px">
+        <button type="button" class="searchbtn btn btn-primary" ng-click="searchText()" >Search  </button></div>
+      <!--ng-click="searchData()"-->
+    </div>
+
+
+
+    <div class="clearfix"></div>
+
+    <div class="searchlisting" style="display:block" >
+
+      <div class="panel  panel-info" >
+        <div class="panel-heading">
+          <h3 class="panel-title">Search Data
+            <!--<input class="form-control" ng-model="search" type="text">-->
+          </h3>
+        </div>
+        <div class="col-lg-12 col-xs-12 searchlisting" style="padding:0px 0px !important" >
+
+              <ul  ng-repeat="food in foods">
+                <li class="col-lg-2 col-xs-12">{{food.recall_number}}</li>
+                <li class="col-lg-2 col-xs-12">{{food.product_quantity}}</li>
+                <li class="col-lg-4 col-xs-12">{{food.reason_for_recall}}</li>
+                <li class="col-lg-2 col-xs-12">{{food.state}},{{food.city}}</li>
+                <li class="col-lg-1 col-xs-12">{{food.classification}}</li>
+              </ul>
+
+
+
+
+
+
+        </div>
+
+        <!--<div ng-repeat="food in foods">-->
+
+            <!--<h4> <span style="font-weight: 200"> </span>recall_number{{food.recall_number}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>reason_for_recall{{food.reason_for_recall}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>status{{food.status}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>distribution_pattern{{food.distribution_pattern}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>product_quantity{{food.product_quantity}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>recall_initiation_date{{food.recall_initiation_date}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>state{{food.state}}</h4>-->
+
+
+          <!--<h4> <span style="font-weight: 200"> </span>event_id{{food.event_id}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>product_type{{food.product_type}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>product_description{{food.product_description}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>country{{food.country}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>city{{food.city}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>recalling_firm{{food.recalling_firm}}</h4>-->
+
+          <!--<h4> <span style="font-weight: 200"> </span>report_date{{food.report_date}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>classification{{food.classification}}</h4>-->
+        <!--<hr>-->
+          <!--</div>-->
+
+
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="clearfix"></div>
+
+  </div>
+
+  <div class="clearfix"></div>
+</div>
+
+
+<div class="site-footer"><div>Copyright 2015, Objectstream.com, All rights Reserved</div></div>
+
+
+
+
+
+
+
 
 <!--SCRIPTS-->
 <script src="/js/dependencies/sails.io.js"></script>
