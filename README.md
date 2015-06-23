@@ -1,3 +1,3 @@
 # openFDAWebApp
 
-a [Sails](http://sailsjs.org) application
+Web Application to search Food, Device and Drug Recalls.
