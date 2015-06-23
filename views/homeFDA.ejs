@@ -77,15 +77,14 @@
           </h3>
         </div>
         <div class="col-lg-12 col-xs-12 searchlisting" style="padding:0px 0px !important" >
-          <div ng-repeat="food in foods" >
-              <ul style="padding-left: 50px;"  ng-repeat="(key, data) in food">
-                <li class="col-lg-2 col-xs-12">aaagf {{data}}</li>
-                <li class="col-lg-2 col-xs-12">bbb fdgfdgfdgfdgfdgfdgfdg fdsfdsfdsfdsfdsgfdfdsfdsf dfdsfds</li>
-                <li class="col-lg-4 col-xs-12">aaa</li>
-                <li class="col-lg-2 col-xs-12">bbb</li>
-                <li class="col-lg-2 col-xs-12">bbb</li>
+
+              <ul  ng-repeat="food in foods">
+                <li class="col-lg-2 col-xs-12">{{food.recall_number}}</li>
+                <li class="col-lg-2 col-xs-12">{{food.product_quantity}}</li>
+                <li class="col-lg-4 col-xs-12">{{food.reason_for_recall}}</li>
+                <li class="col-lg-2 col-xs-12">{{food.state}},{{food.city}}</li>
+                <li class="col-lg-1 col-xs-12">{{food.classification}}</li>
               </ul>
-          </div>
 
 
 
@@ -94,33 +93,29 @@
 
         </div>
 
-        <div ng-repeat="food in foods">
+        <!--<div ng-repeat="food in foods">-->
+
+            <!--<h4> <span style="font-weight: 200"> </span>recall_number{{food.recall_number}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>reason_for_recall{{food.reason_for_recall}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>status{{food.status}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>distribution_pattern{{food.distribution_pattern}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>product_quantity{{food.product_quantity}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>recall_initiation_date{{food.recall_initiation_date}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>state{{food.state}}</h4>-->
 
 
+          <!--<h4> <span style="font-weight: 200"> </span>event_id{{food.event_id}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>product_type{{food.product_type}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>product_description{{food.product_description}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>country{{food.country}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>city{{food.city}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>recalling_firm{{food.recalling_firm}}</h4>-->
 
-            <h4> <span style="font-weight: 200"> </span>recall_number{{food.recall_number}}</h4>
-          <h4> <span style="font-weight: 200"> </span>reason_for_recall{{food.reason_for_recall}}</h4>
-          <h4> <span style="font-weight: 200"> </span>status{{food.status}}</h4>
-          <h4> <span style="font-weight: 200"> </span>distribution_pattern{{food.distribution_pattern}}</h4>
-          <h4> <span style="font-weight: 200"> </span>product_quantity{{food.product_quantity}}</h4>
-          <h4> <span style="font-weight: 200"> </span>recall_initiation_date{{food.recall_initiation_date}}</h4>
-          <h4> <span style="font-weight: 200"> </span>state{{food.state}}</h4>
+          <!--<h4> <span style="font-weight: 200"> </span>report_date{{food.report_date}}</h4>-->
+          <!--<h4> <span style="font-weight: 200"> </span>classification{{food.classification}}</h4>-->
+        <!--<hr>-->
+          <!--</div>-->
 
-
-          <h4> <span style="font-weight: 200"> </span>event_id{{food.event_id}}</h4>
-          <h4> <span style="font-weight: 200"> </span>product_type{{food.product_type}}</h4>
-          <h4> <span style="font-weight: 200"> </span>product_description{{food.product_description}}</h4>
-          <h4> <span style="font-weight: 200"> </span>country{{food.country}}</h4>
-          <h4> <span style="font-weight: 200"> </span>city{{food.city}}</h4>
-          <h4> <span style="font-weight: 200"> </span>recalling_firm{{food.recalling_firm}}</h4>
-
-          <h4> <span style="font-weight: 200"> </span>report_date{{food.report_date}}</h4>
-          <h4> <span style="font-weight: 200"> </span>classification{{food.classification}}</h4>
-
-
-
-          </div>
-          <hr>
 
 
         </div>
