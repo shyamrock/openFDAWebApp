@@ -1,6 +1,6 @@
 angular.module('openFDA').controller('HomeFDAController', function($scope,$http){
 
-$scope.message ="openFDA Data Set View -Test 4 for Vimal";
+$scope.message ="openFDA Data Set View";
 
   $scope.foods="";
 
