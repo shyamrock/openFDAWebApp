@@ -26,21 +26,9 @@ describe("QuerySearch", function() {
     });
   });
 });
-/*describe("QuerySearch", function() {
-  describe("search", function() {
-
-    it("returns some JSON", function(done) {
-      request(app).get("/").end(function(err, res) {
-        expect(res.text).to.be.a('string');
-        done();
-
-      });
-    });
-  });
-});
 
 after(function(done) {
   // stuff to be done
   done();
 });
-*/
+
