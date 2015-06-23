@@ -1,11 +1,9 @@
 #!/bin/sh
 
 ssh app@104.236.11.72 <<EOF
-  forever stopall
-  sudo app rm -Rf ~/openFDAWebApp
-  git clone https://github.com/shyamrock/openFDAWebApp.git
-  cd ~/openFDAWebApp
+ cd ~/openFDAWebApp
+  git pull
   npm install --production
-  forever start app.js --port=80 --prod
+  forever restartall
   exit
 EOF
