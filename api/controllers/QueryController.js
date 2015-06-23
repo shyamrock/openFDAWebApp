@@ -31,6 +31,26 @@ module.exports = {
     })
 
 
+  },
+
+  searchSite: function (req, res) {
+    /* return res.json({
+     // todo: 'search() is not implemented yet!'
+     });
+     */
+    // https://api.fda.gov/food/enforcement.json?limit=10
+
+    var requestUrl = 'http://104.236.11.72';
+    var returnJson ="";
+    request(requestUrl, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        returnJson = body;
+        console.log(returnJson);
+        res.send("returnJson");
+      }
+    })
+
+
   }
 };
 
