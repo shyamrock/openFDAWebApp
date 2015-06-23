@@ -14,7 +14,7 @@ before(function(done) {
   });
 });
 
-/*describe("QuerySearch", function() {
+describe("QuerySearch", function() {
   describe("search", function() {
 
     it("returns some JSON", function(done) {
@@ -31,4 +31,4 @@ after(function(done) {
   // stuff to be done
   done();
 });
-*/
+
