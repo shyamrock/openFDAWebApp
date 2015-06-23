@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ssh app@104.236.11.72 <<EOF
+  cd ~/openFDAWebApp
+  git pull
+  npm install --production
+  forever restartall
+  exit
+EOF
