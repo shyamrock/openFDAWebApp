@@ -2,7 +2,7 @@
 
 ssh app@104.236.11.72 <<EOF
   forever stopall
-  sudo rm -Rf ~/openFDAWebApp
+  sudo app rm -Rf ~/openFDAWebApp
   git clone https://github.com/shyamrock/openFDAWebApp.git
   cd ~/openFDAWebApp
   npm install --production
