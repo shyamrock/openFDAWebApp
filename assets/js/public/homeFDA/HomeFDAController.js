@@ -13,14 +13,31 @@ $scope.message ="openFDA Data Set View";
 
     var selectType=$scope.selectType;//food,drug,etc
     var searchItem=$scope.searchItem; //"ice cream";
-    var url='https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall="'+searchItem+'"&limit=20'
-    $http.get(url).
+   // var url='https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall="'+searchItem+'"&limit=20'
+   // var url='https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall="'+searchItem+'"&limit=20'
+
+    var url="http:/localhost:1337/query/search";
+
+    $http({
+      url: url, method: "GET",
+      params: {selectType: selectType,searchItem:searchItem, limit:limit}
+    }).
       success(function(data, status, headers, config) {
         $scope.foods = data.results;
       }).
       error(function(data, status, headers, config) {
         console.log("Error in frontend app :"+data);
       });
+
+
+    /*$http.get("/query/search").
+      success(function(data, status, headers, config) {
+        $scope.foods = data.results;
+      }).
+      error(function(data, status, headers, config) {
+        console.log("Error in frontend app :"+data);
+      });
+      */
   }
 
 
@@ -28,18 +45,11 @@ $scope.message ="openFDA Data Set View";
     data: [
       {
         sales: 130,
-        income: 250,
-        day:'Tuesday'
+        income: 250
       },
       {
         sales: 180,
-        income: 350,
-        day:'Monday'
-      },
-      {
-        sales: 100,
-        income: 450,
-        day:'Wednesday'
+        income: 350
       }
     ],
     dimensions: {
