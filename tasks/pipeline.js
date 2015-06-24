@@ -30,6 +30,7 @@ var jsFilesToInject = [
   'js/dependencies/angular.min.js',
   'js/dependencies/d3.min.js',
   'js/dependencies/c3.min.js',
+  'js/dependencies/**/*.js',
 
   'js/public/homeFDA/HomeFDAModule.js',
   // All of the rest of your client-side js files
