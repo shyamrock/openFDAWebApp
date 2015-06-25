@@ -12,6 +12,8 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
         var searchItem=$scope.searchItem; //"ice cream";
         var limit=10;
         var skip=skip+10;
+
+
 var url= 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&limit='+limit+'&skip='+skip;
         $http({
           url: url, method: "GET"
@@ -39,21 +41,17 @@ $scope.message ="openFDA Data Set View";
 
   $scope.searchText = function() {
 
-    //alert("hai2"+$scope.selectType);
-
     console.log("...API_URL...."+$scope.searchText);
     var search=$scope.searchText;
-    alert($scope.selectType+$scope.searchItem)
+    alert($scope.selectType+$scope.searchItem);
     var selectType=$scope.selectType;//food,drug,etc
     var searchItem=$scope.searchItem; //"ice cream";
-   // var url='https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall="'+searchItem+'"&limit=20'
-   // var url='https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall="'+searchItem+'"&limit=20'
 
-    var url="http:/localhost:1337/query/search";
+    var url="query/search";
 
     $http({
       url: url, method: "GET",
-      params: {selectType: selectType,searchItem:searchItem, limit:10}
+      params: {selectType: selectType,searchItem:searchItem, searchLimit:10}
     }).
       success(function(data, status, headers, config) {
         $scope.foods = data.results;
