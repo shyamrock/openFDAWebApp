@@ -26,8 +26,6 @@ var url= 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_
             console.log("Error in frontend app :"+data);
           });
 
-
-
        // this.searchText()
         return false;
       }
@@ -41,14 +39,10 @@ $scope.message ="openFDA Data Set View";
 
   $scope.searchText = function() {
 
-    console.log("...API_URL...."+$scope.searchText);
-    var search=$scope.searchText;
-    alert($scope.selectType+$scope.searchItem);
     var selectType=$scope.selectType;//food,drug,etc
     var searchItem=$scope.searchItem; //"ice cream";
 
     var url="query/search";
-
     $http({
       url: url, method: "GET",
       params: {selectType: selectType,searchItem:searchItem, searchLimit:10}
@@ -60,16 +54,10 @@ $scope.message ="openFDA Data Set View";
         console.log("Error in frontend app :"+data);
       });
 
-
-    /*$http.get("/query/search").
-      success(function(data, status, headers, config) {
-        $scope.foods = data.results;
-      }).
-      error(function(data, status, headers, config) {
-        console.log("Error in frontend app :"+data);
-      });
-      */
   }
+
+
+  //tabs
   $scope.tabs = [{
     title: 'Data',
     url: 'one.tpl.html'
