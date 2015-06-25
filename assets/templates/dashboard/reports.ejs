@@ -20,9 +20,41 @@
 				<i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
 			</span>
 		</a>
-		
+
 		<div class="fr">
 		<h2>Reports <small>Work with Chart.js and D3</small></h2>
+
+
+
+      <form role="form" class="bottom-75" ng-submit="submit()">
+        <div class="table-form">
+          <div class="form-groups">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" id="" placeholder="EMAIL" ng-model="username">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" id="" placeholder="PASSWORD">
+            </div>
+
+
+          </div>
+          <div class="button-container">
+            <button type="submit" class="btn btn-default login"><img src="images/arrow.png" alt=""></button>
+          </div>
+        </div>
+        <div class="remember">
+          <label class="checkbox1" for="Option">
+            <input id="Option" type="checkbox" class="">
+            <span></span>
+          </label>
+          remember me
+          <span class="pass"> forgot password?</span>
+        </div>
+      </form>
+
+
+
+
 		</div>
 		<span class="glyphicon glyphicon-dashboard bg-fade"></span>
 		<div class="jumbotron">
@@ -34,5 +66,5 @@
 				</p>
 			</div>
 		</div>
-	</snap-content>	
+	</snap-content>
 </div>

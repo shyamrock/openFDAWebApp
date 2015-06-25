@@ -1,8 +1,25 @@
-angular.module('openFDA').controller('HomeFDAController', function($scope,$http){
+
+
+
+angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location){
+
+
+      $scope.submit = function() {
+
+        alert($scope.username);
+
+
+        $location.path('/dashboard');
+
+        return false;
+      }
+
 
 $scope.message ="openFDA Data Set View";
 
   $scope.foods="";
+
+
 
   $scope.searchText = function() {
 
