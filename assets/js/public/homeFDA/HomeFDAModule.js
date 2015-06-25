@@ -32,24 +32,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/login',
       parent: 'base',
       templateUrl: '/templates/login.ejs',
-      controller: 'LoginCtrl'
+      controller: 'HomeFDAController'
     })
     .state('dashboard', {
       url: '/dashboard',
       parent: 'base',
       templateUrl: '/templates/dashboard.ejs',
-      controller: 'DashboardCtrl'
+      controller: 'HomeFDAController'
     })
     .state('overview', {
       url: '/overview',
       parent: 'dashboard',
       templateUrl: '/templates/dashboard/overview.ejs',
-      controller: 'LoginCtrl'
+      controller: 'HomeFDAController'
     })
     .state('reports', {
       url: '/reports',
       parent: 'dashboard',
-      templateUrl: '/templates/dashboard/reports.ejs'
+      templateUrl: '/templates/dashboard/reports.ejs',
+      controller: 'HomeFDAController'
     });
 
 
