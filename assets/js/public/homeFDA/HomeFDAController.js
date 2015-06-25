@@ -2,11 +2,18 @@
 
 
 angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location){
-
+  var limit=10;
+  var skip=10;
   $scope.foods="";
-      $scope.submit = function() {
+  $scope.total="";
+  $scope.submit = function() {
 
-var url= 'https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"ice cream"&limit=10&skip=10';
+
+        var selectType=$scope.selectType;//food,drug,etc
+        var searchItem=$scope.searchItem; //"ice cream";
+        var limit=10;
+        var skip=skip+10;
+var url= 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&limit='+limit+'&skip='+skip;
         $http({
           url: url, method: "GET"
         }).
