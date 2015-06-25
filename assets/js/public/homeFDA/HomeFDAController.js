@@ -4,9 +4,28 @@
 angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location){
 
   $scope.foods="";
-      $scope.submit = function() {
+  $scope.skip=0;
+  $scope.currentPage=0;
+  $scope.next=function(){
 
-var url= 'https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"ice cream"&limit=10&skip=10';
+
+    $scope.currentPage=$scope.currentPage+1
+    $scope.skipp=$scope.currentPage*10
+    this.submit ($scope.skipp,$scope.currentPage)
+
+  }
+  $scope.previous=function(){
+
+
+    $scope.currentPage=$scope.currentPage-1
+    $scope.skipp=$scope.currentPage*10
+    this.submit ($scope.skipp)
+
+  }
+
+      $scope.submit = function(skip,current) {
+        $scope.currentPage=current
+var url= 'https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"ice cream"&limit=10&skip='+skip+'';
         $http({
           url: url, method: "GET"
         }).
