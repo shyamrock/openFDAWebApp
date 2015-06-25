@@ -6,10 +6,8 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
 
       $scope.submit = function() {
 
-        alert($scope.username);
+        alert($scope.selectType);
 
-
-        $location.path('/dashboard');
 
         return false;
       }
