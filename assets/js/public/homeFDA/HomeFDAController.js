@@ -3,20 +3,31 @@
 
 angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location){
 
-
+  $scope.foods="";
       $scope.submit = function() {
 
-        alert($scope.selectType);
+var url= 'https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"ice cream"&limit=10&skip=10';
+        $http({
+          url: url, method: "GET"
+        }).
+          success(function(data, status, headers, config) {
+            $scope.foods = data.results;
+            $scope.total = data.meta.total;
+          }).
+          error(function(data, status, headers, config) {
+            console.log("Error in frontend app :"+data);
+          });
 
-        alert($scope.searchItem);
-        this.searchText()
+
+
+       // this.searchText()
         return false;
       }
 
 
 $scope.message ="openFDA Data Set View";
 
-  $scope.foods="";
+
 
 
 
