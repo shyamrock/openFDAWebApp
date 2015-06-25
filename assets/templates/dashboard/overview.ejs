@@ -1,3 +1,11 @@
+<style>
+ul li {
+list-style-type: none;
+padding: 0px;
+margin: 0px;
+}
+</style>
+
 <div>
 	<snap-drawer>
 		<div class="snap-menu">
@@ -53,10 +61,76 @@
             <div class="button-container">
               <button type="submit" class="btn btn-default login">Search</button>
             </div>
-          </div>
-        </form>
+      </form>
 
-			</div>
+        <div >
+          <div id="tabs">
+            <ul>
+              <li ng-repeat="tab in tabs"
+                  ng-class="{active:isActiveTab(tab.url)}"
+                  ng-click="onClickTab(tab)"
+                  class="col-lg-2 col-xs-12  nav nav-tabs">{{tab.title}}</li>
+            </ul>
+            <div class="clearfix"></div>
+            <div id="mainView">
+              <div ng-include="currentTab"></div>
+            </div>
+          </div>
+          <script type="text/ng-template" id="one.tpl.html">
+            <div id="viewOne">
+              <div class="searchlisting" style="display:block" >
+                <div class="panel  panel-info" >
+                  <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <ul >
+                        <li class="col-lg-2 col-xs-12">Recall Number</li>
+                        <li class="col-lg-2 col-xs-12">Product Quantity</li>
+                        <li class="col-lg-4 col-xs-12">Reason for Recall</li>
+                        <li class="col-lg-2 col-xs-12">State&city</li>
+                        <li class="col-lg-1 col-xs-12">Classification</li>
+                      </ul>
+                      <!--<input class="form-control" ng-model="search" type="text">-->
+                    </h3>
+                  </div>
+                  <div   class="col-lg-12 col-xs-12 searchlisting" style="padding:0px 0px !important" >
+
+                    <ul  ng-repeat="food in foods">
+                      <li class="col-lg-2 col-xs-12">{{food.recall_number}}</li>
+                      <li class="col-lg-2 col-xs-12">{{food.product_quantity}}</li>
+                      <li class="col-lg-4 col-xs-12">{{food.reason_for_recall}}</li>
+                      <li class="col-lg-2 col-xs-12">{{food.state}},{{food.city}}</li>
+                      <li class="col-lg-1 col-xs-12">{{food.classification}}</li>
+
+
+                    </ul>
+                    <button type="button" class="searchbtn btn btn-primary" ng-click="previous()" >previous  </button>
+                    <button type="button" class="searchbtn btn btn-primary" ng-click="next()" >next  </button>
+
+                    <!--  <div ng-controller="OtherController" class="other-controller">
+                      <small>this is in "OtherController"</small>
+                      <div class="text-center">
+                        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" ></dir-pagination-controls>
+                      </div>-->
+                  </div>
+                </div>
+              </div>    </div>
+          </script>
+
+          <script type="text/ng-template" id="two.tpl.html">
+            <div id="viewTwo">
+              <div class="clearfix"></div>
+              <div class="searchlisting" style="display:block" >
+
+                <div>
+                  angular chart
+                  <angular-chart options="options"></angular-chart>
+                </div>    </div>
+            </div>
+          </script>
+
+
+        </div>
 		</div>
+      </div>
 	</snap-content>
 </div>
