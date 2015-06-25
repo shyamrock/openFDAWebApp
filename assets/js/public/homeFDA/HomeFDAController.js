@@ -5,6 +5,25 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
 
   $scope.foods="";
   $scope.total="";
+  $scope.skip=0;
+  $scope.currentPage=0;
+
+  $scope.next=function(){
+
+    $scope.currentPage=$scope.currentPage+1
+    $scope.skipp=$scope.currentPage*10
+    this.searchText($scope.skipp,$scope.currentPage)
+
+  }
+  $scope.previous=function(){
+
+
+    $scope.currentPage=$scope.currentPage-1
+    $scope.skipp=$scope.currentPage*10
+    this.searchText($scope.skipp)
+
+  }
+
   $scope.submit = function() {
 
 
@@ -37,11 +56,12 @@ $scope.message ="openFDA Data Set View";
 
 
 
-  $scope.searchText = function() {
+  $scope.searchText = function(skip,current) {
 
+    $scope.currentPage=current
     var selectType=$scope.selectType;//food,drug,etc
     var searchItem=$scope.searchItem; //"ice cream";
-
+    var skip=skip;
     var url="query/search";
     $http({
       url: url, method: "GET",
