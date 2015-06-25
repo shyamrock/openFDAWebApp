@@ -8,7 +8,8 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
 
         alert($scope.selectType);
 
-
+        alert($scope.searchItem);
+        this.searchText()
         return false;
       }
 
@@ -25,7 +26,7 @@ $scope.message ="openFDA Data Set View";
 
     console.log("...API_URL...."+$scope.searchText);
     var search=$scope.searchText;
-
+    alert($scope.selectType+$scope.searchItem)
     var selectType=$scope.selectType;//food,drug,etc
     var searchItem=$scope.searchItem; //"ice cream";
    // var url='https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall="'+searchItem+'"&limit=20'
@@ -35,7 +36,7 @@ $scope.message ="openFDA Data Set View";
 
     $http({
       url: url, method: "GET",
-      params: {selectType: selectType,searchItem:searchItem, limit:limit}
+      params: {selectType: selectType,searchItem:searchItem, limit:10}
     }).
       success(function(data, status, headers, config) {
         $scope.foods = data.results;
@@ -54,7 +55,23 @@ $scope.message ="openFDA Data Set View";
       });
       */
   }
+  $scope.tabs = [{
+    title: 'Data',
+    url: 'one.tpl.html'
+  }, {
+    title: 'Graph',
+    url: 'two.tpl.html'
+  }];
 
+  $scope.currentTab = 'one.tpl.html';
+
+  $scope.onClickTab = function (tab) {
+    $scope.currentTab = tab.url;
+  }
+
+  $scope.isActiveTab = function(tabUrl) {
+    return tabUrl == $scope.currentTab;
+  }
 
   $scope.options = {
     data: [
