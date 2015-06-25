@@ -2,8 +2,7 @@
 
 
 angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location){
-  var limit=10;
-  var skip=10;
+
   $scope.foods="";
   $scope.total="";
   $scope.submit = function() {
