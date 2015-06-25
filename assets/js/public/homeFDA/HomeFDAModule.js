@@ -3,16 +3,10 @@ var app=angular.module('openFDA', ['ui.router','snap','ngAnimate']);//'angularCh
 app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.when('/dashboard', '/dashboard/overview');
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/dashboard');
 
   $stateProvider
 
-    .state('home', {
-      url: '/',
-      templateUrl: '/templates/home.ejs',
-      controller: 'HomeFDAController'
-
-    })
 
     .state('home1', {
       url: '/home1',
@@ -39,6 +33,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
       parent: 'base',
       templateUrl: '/templates/dashboard.ejs',
       controller: 'HomeFDAController'
+    })
+    .state('home', {
+      url: '/',
+      parent: 'dashboard',
+      templateUrl: '/templates/dashboard/overview.ejs',
+      controller: 'HomeFDAController'
+
     })
     .state('overview', {
       url: '/overview',
