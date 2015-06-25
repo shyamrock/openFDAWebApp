@@ -135,26 +135,27 @@ margin: 0px;
                 <div class="panel  panel-info" style="background-color:transparent ! important" >
 
                   <div class="" style="background-color:#1ABC9e ! important">
-                    <h3 class="panel-title">
-
+                    <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
+<br>
                       <ul >
-                        <li class="col-lg-2 col-xs-12">Recall Number</li>
-                        <li class="col-lg-2 col-xs-12">Product Quantity</li>
-                        <li class="col-lg-4 col-xs-12">Reason for Recall</li>
-                        <li class="col-lg-2 col-xs-12">State&city</li>
-                        <li class="col-lg-1 col-xs-12">Classification</li>
+                        <li class="col-lg-2 col-xs-12" style="text-decoration:underline;"><b>Recall Number</b></li>
+                        <li class="col-lg-2 col-xs-12" style="text-decoration:underline;"><b>Product Quantity</b></li>
+                        <li class="col-lg-4 col-xs-12" style="text-decoration:underline;"><b>Reason for Recall</b></li>
+                        <li class="col-lg-2 col-xs-12" style="text-decoration:underline;"><b>State&city</b></li>
+                        <li class="col-lg-1 col-xs-12" style="text-decoration:underline;"><b>Classification</b></li>
                       </ul>
+
                       <!--<input class="form-control" ng-model="search" type="text">-->
-                    </h3>
+                    </div>
                   </div>
 
 
                   <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
-
-                        <ul  ng-repeat="food in foods">
+                    <hr>
+                        <ul class="col-lg-12 col-xs-12" ng-repeat="food in foods">
                           <li class="col-lg-2 col-xs-12">{{food.recall_number}}</li>
                           <li class="col-lg-2 col-xs-12">{{food.product_quantity}}</li>
-                          <li class="col-lg-4 col-xs-12">{{food.reason_for_recall}}</li>
+                          <li class="col-lg-4 col-xs-12" style="text-align:justify;">{{food.reason_for_recall}}</li>
                           <li class="col-lg-2 col-xs-12">{{food.state}},{{food.city}}</li>
                           <li class="col-lg-1 col-xs-12">{{food.classification}}</li>
 
@@ -169,7 +170,7 @@ margin: 0px;
 
                   </div>
 
-                  {{$scope.total}}
+
 
 
                   <button type="button" class="searchbtn btn btn-primary" ng-click="previous()" >previous  </button>
@@ -177,7 +178,8 @@ margin: 0px;
 
 
                 </div>
-              </div>    </div>
+              </div>
+            </div>
           </script>
 
           <script type="text/ng-template" id="two.tpl.html">

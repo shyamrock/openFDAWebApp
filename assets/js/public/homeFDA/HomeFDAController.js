@@ -65,7 +65,7 @@ $scope.message ="openFDA Data Set View";
     var url="query/search";
     $http({
       url: url, method: "GET",
-      params: {selectType: selectType,searchItem:searchItem, searchLimit:10}
+      params: {selectType: selectType,searchItem:searchItem, searchLimit:10,skip:skip}
     }).
       success(function(data, status, headers, config) {
         $scope.foods = data.results;
