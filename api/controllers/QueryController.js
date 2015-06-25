@@ -20,13 +20,14 @@ module.exports = {
     var selectType = req.query.selectType;
     var searchItem = req.query.searchItem;
     var searchLimit = req.query.searchLimit;
+    var skip = req.query.skip;
 
 
 
 
 
 
-   var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall="'+searchItem+'"&limit='+searchLimit;
+   var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall="'+searchItem+'"&limit='+searchLimit+'&skip='+skip;
      // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
     var returnJson ="";
     request(requestUrl, function (error, response, body) {
