@@ -22,8 +22,8 @@ margin: 0px;
           <ul class="snap-ul">
             <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
             <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
-            <li><a ui-sref="login">LOGOUT</a></li>
-            <li><a href="http://strapui.com">MORE PREMIUM THEMES</a></li>
+            <!--<li><a ui-sref="login">LOGOUT</a></li>-->
+
           </ul>
         </div>
       </snap-drawer>
@@ -138,8 +138,10 @@ margin: 0px;
                     <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
 <br>
                       <ul >
+
+                        <li class="col-lg-1 col-xs-12" style="text-decoration:underline;"><b>Recall Number</b></li>
+                        <li class="col-lg-1 col-xs-12" style="text-decoration:underline;"><b>Report_date</b></li>
                         <li class="col-lg-4 col-xs-12" style="text-decoration:underline;"><b>Reason for Recall</b></li>
-                        <li class="col-lg-2 col-xs-12" style="text-decoration:underline;"><b>Recall Number</b></li>
                         <li class="col-lg-2 col-xs-12" style="text-decoration:underline;"><b>Product Quantity</b></li>
 
                         <li class="col-lg-2 col-xs-12" style="text-decoration:underline;"><b>State&city</b></li>
@@ -154,10 +156,14 @@ margin: 0px;
                   <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
                     <hr>
                         <ul class="col-lg-12 col-xs-12" ng-repeat="food in foods">
-                          <li class="col-lg-4 col-xs-12" style="text-align:justify;">{{food.reason_for_recall}}</li>
-                          <li class="col-lg-2 col-xs-12">{{food.recall_number}}</li>
-                          <li class="col-lg-2 col-xs-12">{{food.product_quantity}}</li>
 
+                          <li class="col-lg-1 col-xs-12">{{food.recall_number}}</li>
+
+                          <li class="col-lg-1 col-xs-12"  ng-init="model =food.report_date">
+                              <span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'MM/dd/yyyy' }}</span>
+                           </li>
+                          <li class="col-lg-4 col-xs-12" style="text-align:justify;">{{food.reason_for_recall}}</li>
+                          <li class="col-lg-2 col-xs-12">{{food.product_quantity}}</li>
                           <li class="col-lg-2 col-xs-12">{{food.state}},{{food.city}}</li>
                           <li class="col-lg-1 col-xs-12">{{food.classification}}</li>
 
@@ -172,7 +178,7 @@ margin: 0px;
 
                   </div>
 
-
+<br>
 
 
                   <button type="button" class="searchbtn btn btn-primary" ng-click="previous()" >previous  </button>
