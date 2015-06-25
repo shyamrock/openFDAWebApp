@@ -6,22 +6,32 @@ margin: 0px;
 }
 </style>
 
+
+
+
+
+
+
 <div>
-	<snap-drawer>
-		<div class="snap-menu">
-			<div class="sidebar-header text-center">
-				<img src="images/flat-avatar.png" alt="" class="sidebar-img img-circle">
-			</div>
-			<ul class="snap-ul">
-				<li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
-				<li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
-				<li><a ui-sref="login">LOGOUT</a></li>
-				<li><a href="http://strapui.com">MORE PREMIUM THEMES</a></li>
-			</ul>
-		</div>
-	</snap-drawer>
+
+  <snap-drawer>
+        <div class="snap-menu">
+          <div class="sidebar-header text-center">
+            <img src="images/flat-avatar.png" alt="" class="sidebar-img img-circle">
+          </div>
+          <ul class="snap-ul">
+            <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
+            <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
+            <li><a ui-sref="login">LOGOUT</a></li>
+            <li><a href="http://strapui.com">MORE PREMIUM THEMES</a></li>
+          </ul>
+        </div>
+      </snap-drawer>
+
+
 	<snap-dragger></snap-dragger>
-	<snap-content snap-opt-tap-to-close="false">
+
+  <snap-content snap-opt-tap-to-close="false">
 
 		<a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
 			<span class="menutoggle">
@@ -30,40 +40,82 @@ margin: 0px;
 			</span>
 		</a>
 
-		<div class="fr">
-		<h2>Overview <small>Why is Versatile Theme so awesome?</small></h2>
-		</div>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Welcome!</h1>
-
-        <form role="form" class="bottom-75" ng-submit="submit()">
-          <div class="table-form">
-
-                <div class="form-group">
 
 
-                <select id="searchtype" class="form-control input-lg" ng-model="selectType" >
-                  <option value="">Select Tool</option>
-                  <option value="device">Device Recalls</option>
-                  <option value="drug">Drug Recalls</option>
-                  <option value="food">Food Recalls</option>
-                </select>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="jumbotron"  style="margin:0px !important; padding:0px !important;">
+			<div class="container ">
+
+
+
+        <!--page -->
+
+        <!--new page-->
+
+        <div class="login-page">
+          <div class="img-container">
+            <div class="text-center pull-right photo">
+              <img src="images/flat-avatar.png" class="user-avatar img-circle img-responsive" />
+              <h1>OPEN<br/ > <span>FDA</span><br /><small>object stream</small></h1>
+            </div>
+          </div>
+
+          <div class="form-content">
+            <div class="pro-link">
+
+            </div>
+            <form role="form" class="bottom-75" ng-submit="submit()">
+              <div class="table-form">
+                <div class="form-groups">
+                  <div class="form-group">
+
+                    <input  class="form-control input-lg" ng-model="searchItem" type="text" placeholder="SEARCH ITEM">
+                  </div>
+                  <div class="form-group">
+                    <select id="searchtype" class="form-control input-lg" ng-model="selectType" >
+                      <option value="">Select Tool</option>
+                      <option value="device">Device Recalls</option>
+                      <option value="drug">Drug Recalls</option>
+                      <option value="food">Food Recalls</option>
+                    </select>
+
+                  </div>
+
+
+                </div>
+                <div class="button-container">
+                  <button type="submit" class="btn btn-default login"><img src="images/arrow.png" alt=""></button>
+                </div>
               </div>
 
-            <div class="form-group">
-              <input  class="form-control input-lg" ng-model="searchItem" type="text" placeholder="serch item">
-            </div>
+            </form>
+          </div>
 
-            </div>
-            <div class="button-container">
-              <button type="submit" class="btn btn-default login">Search</button>
-            </div>
-      </form>
+
+
+
+        </div>
+
+
+        <!--TABLE-->
 
         <div >
+          FFF
           <div id="tabs">
             <ul>
               <li ng-repeat="tab in tabs"
@@ -76,6 +128,8 @@ margin: 0px;
               <div ng-include="currentTab"></div>
             </div>
           </div>
+
+
           <script type="text/ng-template" id="one.tpl.html">
             <div id="viewOne">
               <div class="searchlisting" style="display:block" >
@@ -128,8 +182,16 @@ margin: 0px;
             </div>
           </script>
 
-
+          JJJ
         </div>
+        <!--TABLE-->
+
+
+
+
+
+
+
 		</div>
       </div>
 	</snap-content>
