@@ -120,7 +120,7 @@ margin: 0px;
               <li ng-repeat="tab in tabs"
                   ng-class="{active:isActiveTab(tab.url)}"
                   ng-click="onClickTab(tab)"
-                  class="col-lg-2 col-xs-12  nav nav-tabs">{{tab.title}}dddd</li>
+                  class="col-lg-2 col-xs-12  nav nav-tabs" style="font-weight: 600;font-size:20px !important;width:250px">{{tab.title}}</li>
             </ul>
             <div class="clearfix"></div>
             <div id="mainView">
@@ -134,26 +134,30 @@ margin: 0px;
               <div class="searchlisting" style="display:block" >
                 <div class="panel  panel-info" style="background-color:transparent ! important" >
 
-                  <div class="" style="background-color:#1ABC9e ! important">
-                    <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
-<br>
-                      <ul >
-
-                        <li class="col-lg-1 col-xs-12" style="text-decoration:underline;"><b>Recall Number</b></li>
-                        <li class="col-lg-1 col-xs-12" style="text-decoration:underline;"><b>Report_date</b></li>
-                        <li class="col-lg-4 col-xs-12" style="text-decoration:underline;"><b>Reason for Recall</b></li>
-                        <li class="col-lg-2 col-xs-12" style="text-decoration:underline;"><b>Product Quantity</b></li>
-
-                        <li class="col-lg-2 col-xs-12" style="text-decoration:underline;"><b>State&city</b></li>
-                        <li class="col-lg-1 col-xs-12" style="text-decoration:underline;"><b>Classification</b></li>
-                      </ul>
-
-                      <!--<input class="form-control" ng-model="search" type="text">-->
-                    </div>
-                  </div>
-
 
                   <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
+
+                    <div ng-if="meta">
+                     <small style="color: indianred"> {{meta.disclaimer}}</small>
+                      <br>
+                      <i>{{meta.results.total}}</i> Results found.
+                      <hr>
+                    </div>
+
+
+
+                    <ul  class="col-lg-12 col-xs-12">
+
+                      <li class="col-lg-1 col-xs-12" style="font-weight: 600;font-size:18px !important">Recall Number</li>
+                      <li class="col-lg-1 col-xs-12" style="font-weight: 600;font-size:18px !important">Report date</li>
+                      <li class="col-lg-4 col-xs-12" style="font-weight: 600;font-size:18px !important">Reason for Recall</li>
+                      <li class="col-lg-2 col-xs-12" style="font-weight: 600;font-size:18px !important">Product Quantity</li>
+
+                      <li class="col-lg-2 col-xs-12" style="font-weight: 600;font-size:18px !important">State&city</li>
+                      <li class="col-lg-1 col-xs-12" style="font-weight: 600;font-size:18px !important">Classification</li>
+                    </ul>
+                    <br>                    <br>
+
                     <hr>
                         <ul class="col-lg-12 col-xs-12" ng-repeat="food in foods">
 

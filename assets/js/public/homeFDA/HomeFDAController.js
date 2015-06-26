@@ -2,8 +2,9 @@
 
 
 angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location){
-
+  $scope.meta="";
   $scope.foods="";
+  $scope.error="";
   $scope.total="";
   $scope.skip=0;
   $scope.currentPage=0;
@@ -39,7 +40,7 @@ var url= 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_
         }).
           success(function(data, status, headers, config) {
             $scope.foods = data.results;
-            $scope.total = data.meta.total;
+            $scope.total = data.meta;
           }).
           error(function(data, status, headers, config) {
             console.log("Error in frontend app :"+data);
@@ -57,7 +58,9 @@ $scope.message ="openFDA Data Set View";
 
 
   $scope.searchText = function(skip,current) {
-
+    $scope.foods="";
+    $scope.meta="";
+    $scope.error="";
     $scope.currentPage=current
     var selectType=$scope.selectType;//food,drug,etc
     var searchItem=$scope.searchItem; //"ice cream";
@@ -68,9 +71,13 @@ $scope.message ="openFDA Data Set View";
       params: {selectType: selectType,searchItem:searchItem, searchLimit:10,skip:skip}
     }).
       success(function(data, status, headers, config) {
+        $scope.meta=data.meta;
         $scope.foods = data.results;
+        $scope.error= data.error;
       }).
       error(function(data, status, headers, config) {
+        $scope.error= data;
+        $scope.foods="";
         console.log("Error in frontend app :"+data);
       });
 

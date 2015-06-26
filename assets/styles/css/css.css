@@ -981,8 +981,8 @@ body {
   font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	line-height: 1.42857143;
-	color: #333;
-	background-color: #fff
+	color: #333 !important;
+	/*background-color: #fff*/
 }
 input, button, select, textarea {
 	font-family: inherit;
@@ -2607,16 +2607,16 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	border-color: #ccc
 }
 .btn-default .badge {
-	color: #fff;
+	color: #0F0005;
 	background-color: #333
 }
 .btn-primary {
-	color: #fff;
+	color:#0F0005;
 	background-color: rgba(6, 104, 199, 0.19);
 	border-color: #2E5CE6
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-	color: #fff;
+	color: #0F0005;
 	background-color: #0047B2;
 	border-color: #0f705d
 }
@@ -2632,12 +2632,12 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	background-color: #fff
 }
 .btn-success {
-	color: #fff;
+	color:#0F0005;
 	background-color: #5cb85c;
 	border-color: #4cae4c
 }
 .btn-success:hover, .btn-success:focus, .btn-success.focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
-	color: #fff;
+	color:#0F0005;
 	background-color: #449d44;
 	border-color: #398439
 }
@@ -2653,12 +2653,12 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	background-color: #fff
 }
 .btn-info {
-	color: #fff;
+	color:#0F0005;
 	background-color: #5bc0de;
 	border-color: #46b8da
 }
 .btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open>.dropdown-toggle.btn-info {
-	color: #fff;
+	color: #0F0005;
 	background-color: #31b0d5;
 	border-color: #269abc
 }
@@ -2674,12 +2674,12 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	background-color: #fff
 }
 .btn-warning {
-	color: #fff;
+	color:#0F0005;
 	background-color: #f0ad4e;
 	border-color: #eea236
 }
 .btn-warning:hover, .btn-warning:focus, .btn-warning.focus, .btn-warning:active, .btn-warning.active, .open>.dropdown-toggle.btn-warning {
-	color: #fff;
+	color:#0F0005;
 	background-color: #ec971f;
 	border-color: #d58512
 }
@@ -2695,12 +2695,12 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	background-color: #fff
 }
 .btn-danger {
-	color: #fff;
+	color: #0F0005;
 	background-color: #d9534f;
 	border-color: #d43f3a
 }
 .btn-danger:hover, .btn-danger:focus, .btn-danger.focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
-	color: #fff;
+	color: #0F0005;
 	background-color: #c9302c;
 	border-color: #ac2925
 }
@@ -2843,7 +2843,7 @@ tbody.collapse.in {
 	clear: both;
 	font-weight: 400;
 	line-height: 1.42857143;
-	color: #333;
+	color: #0F0005;
 	white-space: nowrap
 }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
