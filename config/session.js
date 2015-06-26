@@ -52,12 +52,12 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  // host: 'localhost',
-  // port: 6379,
-  // ttl: <redis session TTL in seconds>,
-  // db: 0,
-  // pass: <redis auth password>,
-  // prefix: 'sess:',
+   host: 'pub-redis-13643.ap-northeast-1-2.1.ec2.garantiadata.com',
+   port: 13643,
+   ttl: 60 * 60 * 24,
+   db: 'openFDASessionStore',
+   pass: 'openfda2015!',
+   prefix: 'sess:'
 
 
   /***************************************************************************
