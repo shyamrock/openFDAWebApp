@@ -7,7 +7,7 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
   $scope.total="";
   $scope.skip=0;
   $scope.currentPage=0;
-
+  $scope.selectType="food";
   $scope.next=function(){
 
     $scope.currentPage=$scope.currentPage+1
@@ -79,12 +79,13 @@ $scope.message ="openFDA Data Set View";
 
   //tabs
   $scope.tabs = [{
-    title: 'Data',
-    url: 'one.tpl.html'
-  }, {
-    title: 'Graph',
-    url: 'two.tpl.html'
-  }];
+    title: 'Enforcement Data',
+    url: 'one.tpl.html'}
+  //, {
+  //  title: 'Graph',
+  //  url: 'two.tpl.html'
+  //}
+];
 
   $scope.currentTab = 'one.tpl.html';
 
