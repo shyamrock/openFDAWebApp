@@ -41,7 +41,7 @@ module.exports.session = {
   * session store that can be shared across multiple Sails.js servers        *
   ***************************************************************************/
 
-  // adapter: 'redis',
+   adapter: 'redis',
 
   /***************************************************************************
   *                                                                          *
@@ -55,7 +55,7 @@ module.exports.session = {
    host: 'pub-redis-13643.ap-northeast-1-2.1.ec2.garantiadata.com',
    port: 13643,
    ttl: 60 * 60 * 24,
-   db: 'openFDASessionStore',
+   db: 0,
    pass: 'openfda2015!',
    prefix: 'sess:'
 
