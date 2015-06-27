@@ -26,9 +26,11 @@ var jsFilesToInject = [
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
   'js/vendor.js',
+
   //'js/dependencies/angular.min.js',
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
+  'js/dependencies/ui-bootstrap-tpls.min.js',
 
   'js/public/homeFDA/HomeFDAModule.js',
   // All of the rest of your client-side js files

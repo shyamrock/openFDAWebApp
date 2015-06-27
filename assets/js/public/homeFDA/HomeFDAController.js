@@ -2,6 +2,27 @@
 
 
 angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location){
+
+  //cerosal
+
+    $scope.myInterval = 3000;
+    $scope.slides = [
+      {
+        image: 'http://lorempixel.com/400/200/'
+      },
+      {
+        image: 'http://lorempixel.com/400/200/food'
+      },
+      {
+        image: 'http://lorempixel.com/400/200/sports'
+      },
+      {
+        image: 'http://lorempixel.com/400/200/people'
+      }
+    ];
+
+
+
   $scope.meta="";
   $scope.foods="";
   $scope.error="";
