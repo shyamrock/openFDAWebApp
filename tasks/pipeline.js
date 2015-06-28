@@ -27,6 +27,7 @@ var jsFilesToInject = [
   'js/dependencies/sails.io.js',
   'js/vendor.js',
   'js/dependencies/ui-bootstrap-tpls.min.js',
+
   //'js/dependencies/angular.min.js',
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
