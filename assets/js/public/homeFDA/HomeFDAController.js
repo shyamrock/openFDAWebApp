@@ -48,7 +48,7 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
 
     $scope.currentPage=$scope.currentPage-1
     $scope.skipp=$scope.currentPage*10
-    this.searchText($scope.skipp)
+    this.searchText($scope.skipp,$scope.currentPage)
 
   }
 /*
