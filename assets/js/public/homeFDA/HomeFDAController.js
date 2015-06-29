@@ -9,6 +9,7 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
   $scope.slides = [
     {
       image: 'images/scroll_Pics/img_01.png'
+
     },
     {
       image: 'images/scroll_Pics/img_02.png'
