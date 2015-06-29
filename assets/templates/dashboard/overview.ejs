@@ -23,44 +23,54 @@
 
   <style>
     ul li {
-      list-style-type: none;
+      list-style-type: circle;
       padding: 0px;
       margin: 0px;
     }
     #slides_control > div{
+
       height: auto;
     }
     img{
       margin:auto;
       width: auto;
+
     }
     #slides_control {
+
       position:inherit;
-      width: 400px;
+      /*width: 600px;*/
+    }
+    #slides_control img{width:100%; height: auto;
+      /*-webkit-border-radius: 20px;*/
+      /*-moz-border-radius: 20px;*/
+      /*border-radius: 20px;*/
     }
 
     .pannel2
     {
       margin-left: 40px;
       font-weight: 400;
-      height:240px;
+      min-height: 240px;
       font-size: 25px;
     }
 
 
     .panel3
     {
-      background-color: #E4E0E0;
-      border: 5px solid #6D93C3;
+      background-color: #6D93C3;
+      border: 5px solid #E4E0E0;
       color: #000000;
-      height: 200px;
-      -webkit-border-radius: 20px;
-      -moz-border-radius: 20px;
-      border-radius: 20px;
+      height: 250px;
+      /*-webkit-border-radius: 20px;*/
+      /*-moz-border-radius: 20px;*/
+      /*border-radius: 20px;*/
     }
 
   </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <snap-content snap-opt-tap-to-close="false">
   <!--part1-->
         <div class="container-fluid" style="background-color:#6D93C3;">
@@ -72,14 +82,28 @@
                             <i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
                           </span>
                             </a>
-                            <h1 style="float: right"> <img src="images/fda_logo.png"  /></h1>
+                            <h1 style="float: right;margin-right: 15px;"> <img src="images/fda_logo.png"  /></h1>
                     </div>
     <!--2nd row-->
 
                     <div class="row" style="background-color:#6D93C3;color:#000000;">
                           <div class=" col-lg-12 col-xs-12" >
 
-                                <div class="panel pannel2 panel-body col-lg-4 col-xs-12">
+                                <div class=" pannel2 panel-body col-lg-4 col-xs-12" style="color:#ffffff !important;">
+
+                                  <ul  style="list-style-type:circle!important; "; >
+                                    <li>
+                                           Quick and easy query utilities using <ope></ope>nFDA API data sets.
+                                    </li>
+                                    <li>    Device, Drug and Food Recall data query
+                                    </li>
+
+                                  </ul>
+
+                                </div>
+
+
+                                <div class=" pannel2 panel-body col-lg-7 col-xs-12">
 
 
                                   <div id="slides_control" panel>
@@ -99,16 +123,7 @@
                                 </div>
 
 
-                                <div class="panel pannel2 panel-body col-lg-7 col-xs-12">
 
-                                  <ul>
-
-                                    . Quick and easy query utilities using openFDA API data sets.
-                                    . Device, Drug and Food Recall data query
-
-                                  </ul>
-
-                                </div>
                           </div>
 
 
@@ -124,22 +139,22 @@
 
 
 
-      <div class="container-fluid" style="background-color:#ACAAAA;">
+      <div class="container-fluid" style="background-color:#6D93C3!important;;">
         <br>
         <div class="width: 100%;">
           <div class=" col-lg-12 col-xs-12" >
-              <div class="panel panel3 " style="overflow: inherit">
+              <div class=" panel3 " style="overflow: inherit">
                 <br><br>
 
-                      <div  style="height: 90px;background-color: #ACAAAA;">
+                      <div  style="height: 90px;background-color: #6D93C3 !important;text-align: center;">
                         <br>
                         <form role="form"  ng-submit="searchText(0,0)">
 
                             <div class="form-groups">
-                              <div class="form-group  col-lg-6 col-xs-6">
+                              <div class="form-group  col-lg-offset-1 col-lg-6 col-xs-12">
                                 <input  class="form-control input-lg" ng-model="searchItem" type="text" placeholder="Any word that is in Reasons for Recall">
                               </div>
-                              <div class="form-group col-lg-2 col-xs-2">
+                              <div class="form-group col-lg-2 col-xs-12">
                                 <select id="searchtype" class="form-control input-lg" ng-model="selectType" >
                                   <option value="device">Device Recalls</option>
                                   <option value="drug">Drug Recalls</option>
@@ -151,8 +166,8 @@
 
                             </div>
 
-                            <div class="button-container col-lg-4 col-xs-4">
-                              <button type="submit" class="btn btn-default login">submit</button>
+                            <div class="button-container col-lg-2 col-xs-4">
+                              <button type="submit" class="btn login" style="padding: 10px 10px">submit  <i class="fa fa-search" ></i></button>
                             </div>
 
 
@@ -161,7 +176,6 @@
 
                       </div>
 
-                <br><br>
 
               </div>
             </div>
@@ -180,7 +194,10 @@
 
                 <div>
 
-                  <div ui-grid="gridOptions" class="myGrid"></div>
+                  <div ui-grid="gridOptions" class="myGrid">
+
+
+                  </div>
                    <!--
                   <table st-table="rowCollection" class="table table-striped">
                     <thead>
