@@ -1,7 +1,7 @@
 
 
 
-angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location){
+angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location, $filter, uiGridConstants){
 
   //cerosal
 
@@ -45,7 +45,7 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
     this.searchText($scope.skipp)
 
   }
-
+/*
   $scope.submit = function() {
 
 
@@ -62,15 +62,22 @@ var url= 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_
           success(function(data, status, headers, config) {
             $scope.foods = data.results;
             $scope.total = data.meta;
+
+
+
+
           }).
           error(function(data, status, headers, config) {
             console.log("Error in frontend app :"+data);
           });
 
+
+
        // this.searchText()
         return false;
       }
 
+*/
 
 $scope.message ="openFDA Data Set View";
 
@@ -93,8 +100,11 @@ $scope.message ="openFDA Data Set View";
     }).
       success(function(data, status, headers, config) {
         $scope.meta=data.meta;
-        $scope.foods = data.results;
+        $scope.dataset = data.results;
         $scope.error= data.error;
+        $scope.gridOptions.data = data.results;
+
+
       }).
       error(function(data, status, headers, config) {
         $scope.error= data;
@@ -105,25 +115,7 @@ $scope.message ="openFDA Data Set View";
   }
 
 
-  //tabs
-  $scope.tabs = [{
-    title: 'Enforcement Data',
-    url: 'one.tpl.html'}
-  //, {
-  //  title: 'Graph',
-  //  url: 'two.tpl.html'
-  //}
-];
-
-  $scope.currentTab = 'one.tpl.html';
-
-  $scope.onClickTab = function (tab) {
-    $scope.currentTab = tab.url;
-  }
-
-  $scope.isActiveTab = function(tabUrl) {
-    return tabUrl == $scope.currentTab;
-  }
+  $scope.itemsByPage=10;
 
   $scope.options = {
     data: [
@@ -143,6 +135,16 @@ $scope.message ="openFDA Data Set View";
       income: {
         axis: 'y2'
       }
+    }
+  };
+
+  $scope.columns = [{ field: 'recall_number' }, { field: 'report_date' }, { field: 'reason_for_recall' }, { field: 'city' },{ field: 'state' }, { field: 'classification' }];
+  $scope.gridOptions = {
+    enableColumnResizing: true,
+    enableSorting: true,
+    columnDefs: $scope.columns,
+    onRegisterApi: function(gridApi) {
+      $scope.gridApi = gridApi;
     }
   };
 

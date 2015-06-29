@@ -179,8 +179,8 @@ select {
 }
 @font-face {
 	font-family: 'Glyphicons Halflings';
-	src: url('../fonts/glyphicons-halflings-regular.eot');
-	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg')
+	src: url('styles/css/fonts/glyphicons-halflings-regular.eot');
+	src: url('styles/css/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('styles/css/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('styles/css/fonts/glyphicons-halflings-regular.woff') format('woff'), url('styles/css/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('styles/css/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg')
 }
 .glyphicon {
 	position: relative;
@@ -7772,4 +7772,8 @@ transform:translateZ(0)translateX(0)
 }
 html, body {
 	overflow: hidden
+}
+.myGrid {
+  width: 1250px;
+  height: 800px;
 }

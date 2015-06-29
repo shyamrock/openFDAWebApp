@@ -1,4 +1,4 @@
-var app=angular.module('openFDA', ['ui.bootstrap','ui.router','snap','ngAnimate']);//'angularChart'
+var app=angular.module('openFDA', ['ui.bootstrap','ui.router','snap','ngAnimate', 'ui.grid','ui.grid.edit']);//'angularChart'
 
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -7,27 +7,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/dashboard');
 
   $stateProvider
-
-
     .state('home1', {
       url: '/home1',
       templateUrl: '../views/homepage.ejs'
-    })
-
-    .state('login1', {
-      url: '/login1',
-      templateUrl: '/templates/login.ejs'
     })
     .state('base', {
       abstract: true,
       url: '',
       templateUrl: '/templates/base.ejs'
-    })
-    .state('login', {
-      url: '/login',
-      parent: 'base',
-      templateUrl: '/templates/login.ejs',
-      controller: 'HomeFDAController'
     })
     .state('dashboard', {
       url: '/dashboard',
@@ -53,7 +40,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       parent: 'dashboard',
       templateUrl: '/templates/dashboard/reports.ejs',
       controller: 'HomeFDAController'
+    }).state('trends', {
+      url: '/trends',
+      parent: 'dashboard',
+      templateUrl: '/templates/trends/trends.ejs',
+      controller: 'SearchTrendsController'
     });
-
 
 });

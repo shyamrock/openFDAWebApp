@@ -5,14 +5,14 @@
 
   <snap-drawer>
         <div class="snap-menu">
-          <h3 style="padding-left: 10px;">object stream</h3>
+          <h3 style="padding-left: 10px;">Objectstream, Inc</h3>
           <div class="sidebar-header text-center">
             <img src="images/flat-avatar.png" alt="" class="sidebar-img img-circle">
           </div>
           <ul class="snap-ul">
             <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
             <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
-            <!--<li><a ui-sref="login">LOGOUT</a></li>-->
+            <li ng-class="{active: $state.includes('trends')}"><a ui-sref="trends">SEARCH TRENDS</a></li>
 
           </ul>
         </div>
@@ -100,12 +100,14 @@
 
 
                                 <div class="panel pannel2 panel-body col-lg-7 col-xs-12">
-                                  <p>
-                                    OpenFDA provides a means of exploring data kepts on the federal data bases.
-                                    This site is easy to use search engine for information on drug and food recalls.
-                                    We provide reports in variety of formats.
-                                    Simply use the search tool below to find your interested topic and then use our report presentation tool to display the data as you want.No coding at all.
-                                  </p>
+
+                                  <ul>
+
+                                    . Quick and easy query utilities using openFDA API data sets.
+                                    . Device, Drug and Food Recall data query
+
+                                  </ul>
+
                                 </div>
                           </div>
 
@@ -123,21 +125,21 @@
 
 
       <div class="container-fluid" style="background-color:#ACAAAA;">
-<br>
+        <br>
         <div class="width: 100%;">
           <div class=" col-lg-12 col-xs-12" >
               <div class="panel panel3 " style="overflow: inherit">
                 <br><br>
 
                       <div  style="height: 90px;background-color: #ACAAAA;">
-<br>
+                        <br>
                         <form role="form"  ng-submit="searchText(0,0)">
 
                             <div class="form-groups">
-                              <div class="form-group  col-lg-4 col-xs-4">
-                                <input  class="form-control input-lg" ng-model="searchItem" type="text" placeholder="SEARCH ITEM">
+                              <div class="form-group  col-lg-6 col-xs-6">
+                                <input  class="form-control input-lg" ng-model="searchItem" type="text" placeholder="Any word that is in Reasons for Recall">
                               </div>
-                              <div class="form-group col-lg-4 col-xs-4">
+                              <div class="form-group col-lg-2 col-xs-2">
                                 <select id="searchtype" class="form-control input-lg" ng-model="selectType" >
                                   <option value="device">Device Recalls</option>
                                   <option value="drug">Drug Recalls</option>
@@ -170,87 +172,53 @@
 
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 							<div class="container-fluid"  style="background-color:#6D93C3;color:#333">
-<br>
+          <br>
 
         <!--page -->
 
-            <div class="searchlisting" style="display:block" >
-              <div class="panel  panel-info" style="color:#000 ! important" >
+
+                <div>
+
+                  <div ui-grid="gridOptions" class="myGrid"></div>
+                   <!--
+                  <table st-table="rowCollection" class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th>Recall Number</th>
+                      <th>Report Date</th>
+                      <th>Reason for Recall</th>
+                      <th>City</th>
+                      <th>State</th>
+                      <th>Classification</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="data in dataset">
+                      <td>{{data.recall_number}}</td>
+                      <td>{{data.report_date}}</td>
+                      <td>{{data.reason_for_recall}}</td>
+                      <td>{{data.city}}</td>
+                      <td>{{data.state}}</td>
+                      <td>{{data.classification}}</td>
+                    </tr>
+                    </tbody>
+
+                    <tfoot>
 
 
-                <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
-
-                  <div ng-if="meta">
-                    <small style="color: indianred"> {{meta.disclaimer}}</small>
-                    <br>
-                    <i>{{meta.results.total}}</i> Results found.
-                    <hr>
-                  </div>
-
-
-
-                  <ul  class="col-lg-12 col-xs-12">
-
-                    <li class="col-lg-1 col-xs-12" style="font-weight: 600;font-size:18px !important">Recall Number</li>
-                    <li class="col-lg-1 col-xs-12" style="font-weight: 600;font-size:18px !important">Report date</li>
-                    <li class="col-lg-4 col-xs-12" style="font-weight: 600;font-size:18px !important">Reason for Recall</li>
-                    <li class="col-lg-2 col-xs-12" style="font-weight: 600;font-size:18px !important">Product Quantity</li>
-
-                    <li class="col-lg-2 col-xs-12" style="font-weight: 600;font-size:18px !important">State&city</li>
-                    <li class="col-lg-1 col-xs-12" style="font-weight: 600;font-size:18px !important">Classification</li>
-                  </ul>
-                  <br>                    <br>
-
-                  <hr>
-                  <ul class="col-lg-12 col-xs-12" ng-repeat="food in foods">
-
-                    <li class="col-lg-1 col-xs-12">{{food.recall_number}}</li>
-
-                    <li class="col-lg-1 col-xs-12"  ng-init="model =food.report_date">
-                      <span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'MM/dd/yyyy' }}</span>
-                    </li>
-                    <li class="col-lg-4 col-xs-12" style="text-align:justify;">{{food.reason_for_recall}}</li>
-                    <li class="col-lg-2 col-xs-12">{{food.product_quantity}}</li>
-                    <li class="col-lg-2 col-xs-12">{{food.state}},{{food.city}}</li>
-                    <li class="col-lg-1 col-xs-12">{{food.classification}}</li>
-
-
-                  </ul>
-
-
-
-
-
-
-
-                </div>
+                    <tr>
+                      <td colspan="5" class="text-center">
+                        <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                      </td>
+                    </tr>
+                    </tfoot>
+                  </table>
+                  -->
+          </div>
 
                 <br>
 
-
-
-                <div style="text-align: center;margin-bottom: 5px">
-                  <button type="button" class="searchbtn btn btn-primary" ng-click="previous()" >previous  </button>
-                  <button type="button" class="searchbtn btn btn-primary" ng-click="next()" >next  </button>
-                </div>
-              </div>
-
-            </div>
 
 
         <!--new page-->
@@ -261,21 +229,6 @@
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <br>
     <div class="clearfix"></div>
