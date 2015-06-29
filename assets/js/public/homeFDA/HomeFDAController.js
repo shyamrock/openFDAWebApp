@@ -5,21 +5,27 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
 
   //cerosal
 
-    $scope.myInterval = 3000;
-    $scope.slides = [
-      {
-        image: 'http://lorempixel.com/400/200/'
-      },
-      {
-        image: 'http://lorempixel.com/400/200/food'
-      },
-      {
-        image: 'http://lorempixel.com/400/200/sports'
-      },
-      {
-        image: 'http://lorempixel.com/400/200/people'
-      }
-    ];
+  $scope.myInterval = 3000;
+  $scope.slides = [
+    {
+      image: 'http://localhost:1337/images/scroll_Pics/img_01.png'
+    },
+    {
+      image: 'http://localhost:1337/images/scroll_Pics/img_02.png'
+    },
+    {
+      image: 'http://localhost:1337/images/scroll_Pics/img_03.png'
+    },
+    {
+      image: 'http://localhost:1337/images/scroll_Pics/img_04.png'
+    },
+    {
+      image: 'http://localhost:1337/images/scroll_Pics/img_05.png'
+    },
+    {
+      image: 'http://localhost:1337/images/scroll_Pics/img_06.png'
+    }
+  ];
 
 
 
