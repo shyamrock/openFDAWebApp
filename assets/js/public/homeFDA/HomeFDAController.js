@@ -8,22 +8,22 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
   $scope.myInterval = 3000;
   $scope.slides = [
     {
-      image: 'images/scroll_pics/img_01.png'
+      image: '/images/scroll_pics/img_01.png'
     },
     {
       image: 'images/scroll_pics/img_02.png'
     },
     {
-      image: 'images/scroll_pics/img_03.png'
+      image: '/images/scroll_pics/img_03.png'
     },
     {
       image: 'images/scroll_pics/img_04.png'
     },
     {
-      image: 'images/scroll_pics/img_05.png'
+      image: '/images/scroll_pics/img_05.png'
     },
     {
-      image: 'images/scroll_pics/img_06.png'
+      image: '/images/scroll_pics/img_06.png'
     }
   ];
 
