@@ -103,6 +103,7 @@ $scope.message ="openFDA Data Set View";
         $scope.dataset = data.results;
         $scope.error= data.error;
         $scope.gridOptions.data = data.results;
+        $scope.rowCollection=data.results
 
 
       }).

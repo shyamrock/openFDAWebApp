@@ -194,7 +194,39 @@
 
                 <div>
 
-                  <div ui-grid="gridOptions" class="myGrid">
+
+                  <table st-table="rowCollection" class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th>Recall Number</th>
+                      <th>Report Date</th>
+                      <th>Reason for Recall</th>
+                      <th>City</th>
+                      <th>State</th>
+                      <th>Classification</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in rowCollection">
+                      <td>{{row.recall_number | uppercase}}</td>
+                      <td>{{row.report_date}}</td>
+                      <td>{{row.reason_for_recall}}</td>
+                      <td>{{row.city}}</td>
+                      <td>{{row.state}}</td>
+                      <td>{{row.classification}}</td>
+
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                      <td colspan="5" class="text-center">
+                        <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                      </td>
+                    </tr>
+                    </tfoot>
+                  </table>
+
+                  <!--<div ui-grid="gridOptions" class="myGrid">-->
 
 
                   </div>
