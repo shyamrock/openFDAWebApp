@@ -1,5 +1,4 @@
 <div>
-  <link rel="stylesheet" href="bower_components/dist/angular-chart.css">
 	<snap-drawer>
 		<div class="snap-menu">
 			<div class="sidebar-header text-center">
@@ -25,14 +24,17 @@
 		<div class="fr">
 		<h2>Reports <small>Work with Chart.js and D3</small></h2>
 
-		</div>
+      <div class="maincontainer">
+        <angular-chart options="options"></angular-chart>
+          </div>
+
+        </div>
+
+
+      </div>
+      </div>
 	</snap-content>
   <div>
-    <div class="searchlisting" style="display:block" >
-    <angular-chart options="options"></angular-chart>
-      </div>
   </div>
-
-  <canvas id="bar" class="chart chart-bar" data="data"
-          labels="labels"></canvas>
 </div>
+
