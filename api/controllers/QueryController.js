@@ -19,7 +19,7 @@ module.exports = {
 
     SearchProfile.find()
       .limit(50)
-      .sort('searchDate')
+      .sort('searchDate DESC')
       .exec(function(err, searchprofile) {
         // Do stuff here
 
