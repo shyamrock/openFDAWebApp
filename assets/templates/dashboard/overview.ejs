@@ -54,6 +54,23 @@
       min-height: 240px;
       font-size: 25px;
     }
+  table
+    {
+  border: 1px solid #f7f7f7;
+    }
+    tr:first-child{
+      background-color: #5e83b8 !important;
+      color: #f8f8f8;
+
+    }
+    tr:nth-of-type(odd) {
+      background-color: #9bb8dc;
+
+    }
+    tr:nth-of-type(even) {
+       background-color: #82a2cb !important;
+      color: seashell;
+     }
 /*responsive styles*/
     @media only screen and (max-width: 800px) {
       .ng-table-vml-responsive {
@@ -238,54 +255,60 @@
   </div>
 
 							<div class="container-fluid"  style="background-color:#6D93C3;color:#333">
-          <br>
 
-        <!--page -->
-                <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
-
-                <table ng-table="tableParams" class="table ng-table-vml-responsive" export-csv="csv">
-                  <tr ng-repeat="user in $data">
-                    <td data-title="'recall_number'" sortable="'recall_number'">
-                      {{user.recall_number}}
-                    </td>
-                    <td data-title="'report_date'" sortable="'report_date'" ng-init="model =user.report_date">
-                        <span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'dd/MM/yyyy' }}</span>
-                    </td>
-                    <td data-title="'reason_for_recall'" sortable="'reason_for_recall'">
-                      {{user.reason_for_recall}}
-                    </td>
-                    <td data-title="'city'" sortable="'city'">
-                      {{user.city}}
-                    </td>
-                    <td data-title="'state'" sortable="'state'" >
-                      {{user.state}}
-                    </td>
-                    <td data-title="'classification'" sortable="'classification'">
-                      {{user.classification}}
-                    </td>
-                  </tr>
-                </table>
-
-         <!--end-->
-
-                <div>
+                <div ng-if="meta">
+                        <small style="color:#ffc520"> {{meta.disclaimer}}</small>
+                        <br>
+                        <i>{{meta.results.total}}</i> Results found.
+                        <hr>
 
 
+                            <!--page -->
+                                    <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
 
-                  </div>
+                                    <table ng-table="tableParams" class="table ng-table-vml-responsive" export-csv="csv">
+                                      <tr ng-repeat="user in $data">
+                                        <td data-title="'recall_number'" sortable="'recall_number'">
+                                          {{user.recall_number}}
+                                        </td>
+                                        <td data-title="'report_date'" sortable="'report_date'" ng-init="model =user.report_date">
+                                            <span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'dd/MM/yyyy' }}</span>
+                                        </td>
+                                        <td data-title="'reason_for_recall'" sortable="'reason_for_recall'">
+                                          {{user.reason_for_recall}}
+                                        </td>
+                                        <td data-title="'city'" sortable="'city'">
+                                          {{user.city}}
+                                        </td>
+                                        <td data-title="'state'" sortable="'state'" >
+                                          {{user.state}}
+                                        </td>
+                                        <td data-title="'classification'" sortable="'classification'">
+                                          {{user.classification}}
+                                        </td>
+                                      </tr>
+                                    </table>
 
-          </div>
+                             <!--end-->
 
-                <br>
+                                    <div>
 
 
 
-        <!--new page-->
+                                      </div>
+
+                              </div>
+
+                                    <br>
+
+
+
+                            <!--new page-->
 
 
 
 
-
+              </div>
 
 
     </div>
