@@ -1,4 +1,5 @@
 <div>
+  <link rel="stylesheet" href="bower_components/dist/angular-chart.css">
 	<snap-drawer>
 		<div class="snap-menu">
 			<div class="sidebar-header text-center">
@@ -24,47 +25,14 @@
 		<div class="fr">
 		<h2>Reports <small>Work with Chart.js and D3</small></h2>
 
-
-
-      <form role="form" class="bottom-75" ng-submit="submit()">
-        <div class="table-form">
-          <div class="form-groups">
-            <div class="form-group">
-              <input type="text" class="form-control input-lg" id="" placeholder="EMAIL" ng-model="username">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control input-lg" id="" placeholder="PASSWORD">
-            </div>
-
-
-          </div>
-          <div class="button-container">
-            <button type="submit" class="btn btn-default login"><img src="images/arrow.png" alt=""></button>
-          </div>
-        </div>
-        <div class="remember">
-          <label class="checkbox1" for="Option">
-            <input id="Option" type="checkbox" class="">
-            <span></span>
-          </label>
-          remember me
-          <span class="pass"> forgot password?</span>
-        </div>
-      </form>
-
-
-
-
-		</div>
-		<span class="glyphicon glyphicon-dashboard bg-fade"></span>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Add Charts here</h1>
-				<p>You can use C3.js or Chart.js</p>
-				<p>
-					<a class="btn btn-primary btn-lg btn-white" ui-sref="overview">Back to Overview</a>
-				</p>
-			</div>
 		</div>
 	</snap-content>
+  <div>
+    <div class="searchlisting" style="display:block" >
+    <angular-chart options="options"></angular-chart>
+      </div>
+  </div>
+
+  <canvas id="bar" class="chart chart-bar" data="data"
+          labels="labels"></canvas>
 </div>
