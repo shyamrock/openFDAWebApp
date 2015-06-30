@@ -135,7 +135,15 @@ $scope.message ="openFDA Data Set View";
         }, {
           total: dataa.length, // length of data
           getData: function($defer, params) {
-            $defer.resolve(dataa.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+            var orderedData = params.sorting ?
+              $filter('orderBy')(dataa, params.orderBy()) :
+              dataa;
+            orderedData = params.filter ?
+              $filter('filter')(orderedData, params.filter()) :
+              orderedData;
+
+
+            $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
           }
         });
 
