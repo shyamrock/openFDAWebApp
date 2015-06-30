@@ -2,9 +2,8 @@
 
 ssh app@104.236.11.72 <<EOF
  cd ~/openFDAWebApp
-  forever stopall
   git pull
   npm install --production
-  forever start app.js --prod
+  forever restartall
   exit
 EOF
