@@ -190,12 +190,40 @@
           <br>
 
         <!--page -->
+                <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
 
+                <table ng-table="tableParams" class="table" export-csv="csv">
+                  <tr ng-repeat="user in $data">
+                    <td data-title="'recall_number'">
+                      {{user.recall_number}}
+                    </td>
+                    <td data-title="'report_date'">
+                      {{user.report_date}}
+                    </td>
+                    <td data-title="'reason_for_recall'">
+                      {{user.reason_for_recall}}
+                    </td>
+                    <td data-title="'city'">
+                      {{user.city}}
+                    </td>
+                    <td data-title="'state'">
+                      {{user.state}}
+                    </td>
+                    <td data-title="'classification'">
+                      {{user.classification}}
+                    </td>
+                    <!--<td data-title="'report_date'">-->
+                      <!--{{user.report_date}}-->
+                    <!--</td>-->
+                  </tr>
+                </table>
+
+                <!--end-->
 
                 <div>
 
 
-                  <table st-table="rowCollection" class="table table-striped">
+                  <!--<table st-table="rowCollection" class="table table-striped">
                     <thead>
                     <tr>
                       <th>Recall Number</th>
@@ -225,7 +253,7 @@
                       </td>
                     </tr>
                     </tfoot>
-                  </table>
+                  </table>-->
 
                   <!--<div ui-grid="gridOptions" class="myGrid">-->
 

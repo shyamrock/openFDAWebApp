@@ -1,10 +1,10 @@
 
 
 
-angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location, $filter, uiGridConstants){
+angular.module('openFDA').controller('HomeFDAController', function($scope,$http, $location, $filter, uiGridConstants, NgTableParams, $sce){
 
   //cerosal
-
+  $scope.rowCollection="";
   $scope.myInterval = 3000;
   $scope.slides = [
     {
@@ -28,6 +28,22 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
     }
   ];
 
+
+  /*test data*/
+ /* var dataa = [
+    {name: "Enos", age: 34}];
+
+
+  $scope.tableParams = new NgTableParams({
+    page: 1,            // show first page
+    count: 10           // count per page
+  }, {
+    total: dataa.length, // length of data
+    getData: function($defer, params) {
+      $defer.resolve(dataa.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+    }
+  });*/
+  //end
 
 
   $scope.meta="";
@@ -103,15 +119,25 @@ $scope.message ="openFDA Data Set View";
     var url="query/search";
     $http({
       url: url, method: "GET",
-      params: {selectType: selectType,searchItem:searchItem, searchLimit:10,skip:skip}
+      params: {selectType: selectType,searchItem:searchItem, searchLimit:20,skip:skip}
     }).
       success(function(data, status, headers, config) {
         $scope.meta=data.meta;
         $scope.dataset = data.results;
         $scope.error= data.error;
         $scope.gridOptions.data = data.results;
-        $scope.rowCollection=data.results
+        $scope.rowCollection=data.results;
 
+        var dataa=data.results;
+        $scope.tableParams = new NgTableParams({
+          page: 1,            // show first page
+          count: 10           // count per page
+        }, {
+          total: dataa.length, // length of data
+          getData: function($defer, params) {
+            $defer.resolve(dataa.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+          }
+        });
 
       }).
       error(function(data, status, headers, config) {

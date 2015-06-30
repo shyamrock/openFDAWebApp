@@ -1,4 +1,4 @@
-var app=angular.module('openFDA', ['ui.bootstrap','ui.router','snap','ngAnimate', 'ui.grid','ui.grid.edit']);//'angularChart'
+var app=angular.module('openFDA', ['ui.bootstrap','ui.router','snap','ngAnimate', 'ngTable','ngTableExport','ui.grid','ui.grid.edit']);//'angularChart'
 
 
 app.config(function($stateProvider, $urlRouterProvider) {
