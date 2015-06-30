@@ -31,7 +31,25 @@
 
       <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
 
-        <table st-table="rowCollection" class="table table-striped">
+        <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+
+
+
+        <table class="table" ng-table="tableParams">
+
+          <tr ng-repeat="item in searchTrendsResult.data">
+            <td data-title="'User IP'">{{item.searchDate|date : format : timezone}}</td>
+            <td data-title="'User IP'">{{item.ip}}</td>
+            <td data-title="'Search Type'">{{ item.searchType | uppercase }}</td>
+            <td data-title="'Search Term'">{{item.searchTerm|uppercase}}</td>
+
+          </tr>
+        </table>
+
+
+<hr>
+
+       <!-- <table st-table="rowCollection" class="table table-striped">
           <thead>
           <tr>
             <th>Search Date</th>
@@ -58,20 +76,9 @@
             </td>
           </tr>
           </tfoot>
-        </table>
+        </table>-->
 
-        <!--
-        <table class="table" ng-table="tableParams">
 
-          <tr ng-repeat="item in searchTrendsResult.data">
-            <td data-title="'User IP'">{{item.searchDate|date : format : timezone}}</td>
-            <td data-title="'User IP'">{{item.ip}}</td>
-            <td data-title="'Search Type'">{{ item.searchType | uppercase }}</td>
-            <td data-title="'Search Term'">{{item.searchTerm|uppercase}}</td>
-
-          </tr>
-        </table>
-        -->
 
     </div>
 
