@@ -268,18 +268,18 @@
                             <!--page -->
                                     <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
 
-                                    <table ng-table="tableParams" class="table ng-table-vml-responsive" export-csv="csv">
+                                    <table ng-table="tableParams" show-filter="true" class="table ng-table-vml-responsive" export-csv="csv">
                                       <tr ng-repeat="user in $data">
                                         <td data-title="'recall_number'" sortable="'recall_number'">
                                           {{user.recall_number}}
                                         </td>
-                                        <td data-title="'report_date'" sortable="'report_date'" ng-init="model =user.report_date">
-                                            <span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'dd/MM/yyyy' }}</span>
+                                        <td data-title="'report_date'" sortable="'report_date'" >
+                                           {{user.report_date}} <!--ng-init="model =user.report_date"<span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'dd/MM/yyyy' }}</span>-->
                                         </td>
                                         <td data-title="'reason_for_recall'" sortable="'reason_for_recall'">
                                           {{user.reason_for_recall}}
                                         </td>
-                                        <td data-title="'city'" sortable="'city'">
+                                        <td data-title="'city'" sortable="'city'" filter="{ 'city': 'text' }">
                                           {{user.city}}
                                         </td>
                                         <td data-title="'state'" sortable="'state'" >
