@@ -1,6 +1,5 @@
 var app=angular.module('openFDA', ['ui.bootstrap','ui.router','snap','ngAnimate', 'ngTable','ngTableExport','highcharts-ng','ui.grid','ui.grid.edit']);//'angularChart'
 
-//,'highcharts-ng'
 app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.when('/dashboard', '/dashboard/overview');
