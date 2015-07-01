@@ -1,6 +1,6 @@
-var app=angular.module('openFDA', ['ui.bootstrap','ui.router','snap','ngAnimate', 'ngTable','ngTableExport','ui.grid','ui.grid.edit']);//'angularChart'
+var app=angular.module('openFDA', ['ui.bootstrap','ui.router','snap','ngAnimate', 'ngTable','ngTableExport','highcharts-ng','ui.grid','ui.grid.edit']);//'angularChart'
 
-
+//,'highcharts-ng'
 app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.when('/dashboard', '/dashboard/overview');
@@ -39,7 +39,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/reports',
       parent: 'dashboard',
       templateUrl: '/templates/dashboard/reports.ejs',
-      controller: 'HomeFDAController'
+      controller: 'ChartController'
     })
     .state('trends', {
       url: '/trends',
