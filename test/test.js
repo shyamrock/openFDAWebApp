@@ -14,8 +14,8 @@ before(function(done) {
   });
 });
 
-describe("QuerySearch", function() {
-  describe("search", function() {
+describe("Query", function() {
+  describe("searchTrends", function() {
 
     it("returns some JSON", function(done) {
       request(app).get("/").end(function(err, res) {
