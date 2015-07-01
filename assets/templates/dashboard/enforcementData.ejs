@@ -155,26 +155,11 @@
         </a>
         <h1 style="float: right;margin-right: 15px;"> <img src="images/fda_logo.png"  /></h1>
       </div>
+      <hr>
       <!--2nd row-->
 
-      <div class="row" style="background-color:#6D93C3;color:#000000;">
-        <!--<div class=" col-lg-12 col-xs-12" >-->
+     <!-- <div class="row" style="background-color:#6D93C3;color:#000000;">
 
-        <!--<div class=" pannel2 panel-body col-lg-4 col-xs-12" style="color:#ffffff !important;">-->
-
-        <!--<ul  style="list-style-type:circle!important; "; >-->
-        <!--<li>-->
-        <!--Quick and easy query utilities using openFDA API data sets.-->
-        <!--</li>-->
-        <!--<li>    Device, Drug and Food Recall data query-->
-        <!--</li>-->
-
-        <!--</ul>-->
-
-        <!--</div>-->
-
-
-        <!--<div class=" pannel2 panel-body col-lg-7 col-xs-12">-->
 
 
         <div id="slides_control" panel>
@@ -191,17 +176,9 @@
         </div>
 
 
-        <!--</div>-->
-
-
-
-        <!--</div>-->
-
-
-
 
       </div>
-
+-->
 
 
     </div>
@@ -210,16 +187,97 @@
 
 
 
-    <div class="container-fluid" style="background-color:#f60000!important;;">
+    <div class="container-fluid" style="background-color:#6D93C3!important;;">
+
+      <div class="width: 100%;">
+        <div class=" col-lg-12 col-xs-12" >
+          <div class=" panel3 " style="overflow: inherit">
+
+
+            <div  style="background-color: #6D93C3 !important;text-align: center;">
+              <br>
+              <form role="form"  ng-submit="searchText(0,0)">
+
+                <div class="form-groups">
+                  <div class="form-group  col-lg-offset-1 col-lg-6 col-xs-12">
+                    <input  class="form-control input-lg" ng-model="searchItem" type="text" placeholder="Any word that is in Reasons for Recall">
+                  </div>
+                  <div class="form-group col-lg-2 col-xs-12">
+                    <select id="searchtype" class="form-control input-lg" ng-model="selectType" >
+                      <option value="device">Device Recalls</option>
+                      <option value="drug">Drug Recalls</option>
+                      <option value="food" selected="selected">Food Recalls</option>
+                    </select>
+
+                  </div>
+
+
+                </div>
+
+                <div class="button-container col-lg-2 col-xs-4">
+                  <button type="submit" class="btn login" style="padding: 10px 10px">submit  <i class="fa fa-search" ></i></button>
+                </div>
+
+
+              </form>
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
 
 
 
 
     </div>
-    <!--6D93C3-->
-    <div class="container-fluid"  style="background-color:#f60000;color:#333">
+
+    <div class="container-fluid"  style="background-color:#6D93C3;color:#333">
+
+      <div ng-if="meta">
+        <small style="color:#ffc520"> {{meta.disclaimer}}</small>
+        <br>
+        <i>{{meta.results.total}}</i> Results found.
+        <hr>
 
 
+        <!--page -->
+        <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+
+        <table ng-table="tableParams" show-filter="true" class="table ng-table-vml-responsive" export-csv="csv">
+          <tr ng-repeat="user in $data">
+            <td data-title="'recall_number'" sortable="'recall_number'">
+              {{user.recall_number}}
+            </td>
+            <td data-title="'report_date'" sortable="'report_date'" >
+              {{user.report_date}} <!--ng-init="model =user.report_date"<span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'dd/MM/yyyy' }}</span>-->
+            </td>
+            <td data-title="'reason_for_recall'" sortable="'reason_for_recall'">
+              {{user.reason_for_recall}}
+            </td>
+            <td data-title="'city'" sortable="'city'" filter="{ 'city': 'text' }">
+              {{user.city}}
+            </td>
+            <td data-title="'state'" sortable="'state'" >
+              {{user.state}}
+            </td>
+            <td data-title="'classification'" sortable="'classification'">
+              {{user.classification}}
+            </td>
+          </tr>
+        </table>
+
+        <!--end-->
+
+        <div>
+
+
+
+        </div>
+
+      </div>
 
       <br>
 
