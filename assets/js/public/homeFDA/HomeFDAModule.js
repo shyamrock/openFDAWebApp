@@ -40,11 +40,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
       parent: 'dashboard',
       templateUrl: '/templates/dashboard/reports.ejs',
       controller: 'HomeFDAController'
-    }).state('trends', {
+    })
+    .state('trends', {
       url: '/trends',
       parent: 'dashboard',
       templateUrl: '/templates/trends/trends.ejs',
       controller: 'SearchTrendsController'
+    })
+    .state('enforcementData', {
+      url: '/enforcementData',
+      parent: 'dashboard',
+      templateUrl: '/templates/dashboard/enforcementData.ejs',
+      controller: 'HomeFDAController'
     });
 
 });
