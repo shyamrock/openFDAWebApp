@@ -1,24 +1,30 @@
 var request = require("supertest");
 var expect = require("chai").expect;
-var sails = require("sails");
-var app;
+var Sails = require('sails'),
+  sails;
 
-before(function(done) {
-  sails.lift({
-    log: {
-      level: "error"
-    }
-  }, function(err, sails) {
-    app = sails.hooks.http.app;
-    done();
+beforeEach(function (done) {
+  Sails.lift({
+    // configuration for testing purposes
+  }, function(err, server) {
+    sails = server;
+    if (err) return done(err);
+    // here you can load fixtures, etc.
+    done(err, sails);
   });
 });
 
-describe("Query", function() {
-  describe("searchTrends", function() {
+// Lower Sails after the tests
+afterEach(function (done) {
+  sails.lower(done);
+});
+
+
+describe("QueryController", function() {
+  describe("#searchTrends", function() {
 
     it("returns some JSON", function(done) {
-      request(app).get("/").end(function(err, res) {
+      request(sails.hooks.http.app).get("/query/searchTrends").end(function(err, res) {
         expect(res.text).to.be.a('string');
         done();
 
