@@ -1,0 +1,300 @@
+
+
+
+<div>
+
+  <snap-drawer>
+    <div class="snap-menu">
+      <!--<h1 style="float: left;margin-right: 15px;"> </h1>-->
+      <!--<h3 style="padding-left: 10px;">Objectstream, Inc</h3>-->
+      <div class="sidebar-header text-center">
+        <img src="images/fda_logo.png"  />
+        <!--<img src="images/flat-avatar.png" alt="" class="sidebar-img img-circle">-->
+      </div>
+      <ul class="snap-ul">
+        <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
+        <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT DATA </a></li>
+        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
+        <li ng-class="{active: $state.includes('trends')}"><a ui-sref="trends">SEARCH TRENDS</a></li>
+
+      </ul>
+    </div>
+  </snap-drawer>
+
+
+  <snap-dragger></snap-dragger>
+
+  <style>
+    ul li {
+      list-style-type: circle;
+      padding: 0px;
+      margin: 0px;
+    }
+    #slides_control > div{
+
+      height: auto;
+    }
+    img{
+      margin:auto;
+      width: auto;
+
+    }
+    #slides_control {
+
+      position:inherit;
+      /*width: 600px;*/
+    }
+    #slides_control img{width:100%; height: auto;
+      /*-webkit-border-radius: 20px;*/
+      /*-moz-border-radius: 20px;*/
+      /*border-radius: 20px;*/
+    }
+
+    .pannel2
+    {
+      margin-left: 40px;
+      font-weight: 400;
+      /*min-height: 250px;*/
+      font-size: 25px;
+    }
+    table
+    {
+      border: 1px solid #f7f7f7;
+    }
+    tr:first-child{
+      background-color: #5e83b8 !important;
+      color: #f8f8f8;
+
+    }
+    tr:nth-of-type(odd) {
+      background-color: #9bb8dc;
+
+    }
+    tr:nth-of-type(even) {
+      background-color: #82a2cb !important;
+      color: seashell;
+    }
+    /*responsive styles*/
+    @media only screen and (max-width: 800px) {
+      .ng-table-vml-responsive {
+        border-bottom: 1px solid #999999;
+      }
+      .ng-table-vml-responsive tr {
+        border-top: 1px solid #999999;
+        border-left: 1px solid #999999;
+        border-right: 1px solid #999999;
+      }
+      .ng-table-vml-responsive td:after {
+        position: absolute;
+        padding: 8px;
+        left: 0;
+        top: 0;
+        width: 50%;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+      }
+      .ng-table-vml-responsive thead tr th {
+        text-align: left;
+      }
+      .ng-table-vml-responsive thead tr.ng-table-filters th {
+        padding: 0;
+      }
+      .ng-table-vml-responsive thead tr.ng-table-filters th form > div {
+        padding: 8px;
+      }
+      .ng-table-vml-responsive td {
+        border: none;
+        border-bottom: 1px solid #eeeeee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+      }
+      .ng-table-vml-responsive td:before {
+        content: attr(data-title-text);
+      }
+      .ng-table-vml-responsive,
+      .ng-table-vml-responsive thead,
+      .ng-table-vml-responsive tbody,
+      .ng-table-vml-responsive th,
+      .ng-table-vml-responsive td,
+      .ng-table-vml-responsive tr {
+        display: block;
+      }
+    }
+    /*end responsive styles*/
+
+
+
+
+    .panel3
+    {
+      background-color: #6D93C3;
+      /*border: 5px solid #E4E0E0;*/
+      color: #000000;
+      /*-webkit-border-radius: 20px;*/
+      /*-moz-border-radius: 20px;*/
+      /*border-radius: 20px;*/
+    }
+
+  </style>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <snap-content snap-opt-tap-to-close="false">
+    <!--part1-->
+    <div class="container-fluid" style="background-color:#6D93C3;">
+      <!--menu 3 lines open and close-->
+      <div class="row" style="background-color:#6D93C3;">
+        <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+                          <span class="menutoggle">
+                            <i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
+                            <i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
+                          </span>
+        </a>
+        <h1 style="float: right;margin-right: 15px;"> <img src="images/fda_logo.png"  /></h1>
+      </div>
+      <hr>
+      <!--2nd row-->
+
+     <!-- <div class="row" style="background-color:#6D93C3;color:#000000;">
+
+
+
+        <div id="slides_control" panel>
+          <div>
+            <carousel interval="myInterval">
+              <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}">
+                <div class="carousel-caption">
+
+                </div>
+              </slide>
+            </carousel>
+          </div>
+        </div>
+
+
+
+      </div>
+-->
+
+
+    </div>
+
+    <!--part2 -->
+
+
+
+    <div class="container-fluid" style="background-color:#6D93C3!important;;">
+
+      <div class="width: 100%;">
+        <div class=" col-lg-12 col-xs-12" >
+          <div class=" panel3 " style="overflow: inherit">
+
+
+            <div  style="background-color: #6D93C3 !important;text-align: center;">
+              <br>
+              <form role="form"  ng-submit="searchText(0,0)">
+
+                <div class="form-groups">
+                  <div class="form-group  col-lg-offset-1 col-lg-6 col-xs-12">
+                    <input  class="form-control input-lg" ng-model="searchItem" type="text" placeholder="Any word that is in Reasons for Recall">
+                  </div>
+                  <div class="form-group col-lg-2 col-xs-12">
+                    <select id="searchtype" class="form-control input-lg" ng-model="selectType" >
+                      <option value="device">Device Recalls</option>
+                      <option value="drug">Drug Recalls</option>
+                      <option value="food" selected="selected">Food Recalls</option>
+                    </select>
+
+                  </div>
+
+
+                </div>
+
+                <div class="button-container col-lg-2 col-xs-4">
+                  <button type="submit" class="btn login" style="padding: 10px 10px">submit  <i class="fa fa-search" ></i></button>
+                </div>
+
+
+              </form>
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+    <div class="container-fluid"  style="background-color:#6D93C3;color:#333">
+
+      <div ng-if="meta">
+        <small style="color:#ffc520"> {{meta.disclaimer}}</small>
+        <br>
+        <i>{{meta.results.total}}</i> Results found.
+        <hr>
+
+
+        <!--page -->
+        <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+
+        <table ng-table="tableParams" show-filter="true" class="table ng-table-vml-responsive" export-csv="csv">
+          <tr ng-repeat="user in $data">
+            <td data-title="'recall_number'" sortable="'recall_number'">
+              {{user.recall_number}}
+            </td>
+            <td data-title="'report_date'" sortable="'report_date'" >
+              {{user.report_date}} <!--ng-init="model =user.report_date"<span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'dd/MM/yyyy' }}</span>-->
+            </td>
+            <td data-title="'reason_for_recall'" sortable="'reason_for_recall'">
+              {{user.reason_for_recall}}
+            </td>
+            <td data-title="'city'" sortable="'city'" filter="{ 'city': 'text' }">
+              {{user.city}}
+            </td>
+            <td data-title="'state'" sortable="'state'" >
+              {{user.state}}
+            </td>
+            <td data-title="'classification'" sortable="'classification'">
+              {{user.classification}}
+            </td>
+          </tr>
+        </table>
+
+        <!--end-->
+
+        <div>
+
+
+
+        </div>
+
+      </div>
+
+      <br>
+
+
+
+      <!--new page-->
+
+
+
+
+    </div>
+
+    <!--<div class="clearfix"></div>-->
+    <!--<div class="site-footer"><div>Copyright 2015, Objectstream.com, All rights Reserved</div></div>-->
+</div>
+
+
+</snap-content>
+
+</div>
