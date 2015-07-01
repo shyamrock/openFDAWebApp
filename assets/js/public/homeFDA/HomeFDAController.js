@@ -111,7 +111,7 @@ $scope.message ="openFDA Data Set View";
   $scope.searchText = function(skip,current) {
     $scope.foods="";
     $scope.meta="";
-    $scope.error="";
+    $scope.error="notfound";
     $scope.currentPage=current
     var selectType=$scope.selectType;//food,drug,etc
     var searchItem=$scope.searchItem; //"ice cream";
@@ -122,6 +122,7 @@ $scope.message ="openFDA Data Set View";
       params: {selectType: selectType,searchItem:searchItem, searchLimit:20,skip:skip}
     }).
       success(function(data, status, headers, config) {
+        $scope.error="found";
         $scope.meta=data.meta;
         $scope.dataset = data.results;
         $scope.error= data.error;
@@ -130,11 +131,14 @@ $scope.message ="openFDA Data Set View";
 
         var dataa=data.results;
         $scope.tableParams = new NgTableParams({
+
           page: 1,            // show first page
           count: 10           // count per page
         }, {
           total: dataa.length, // length of data
           getData: function($defer, params) {
+
+
             var orderedData = params.sorting ?
               $filter('orderBy')(dataa, params.orderBy()) :
               dataa;
@@ -149,6 +153,7 @@ $scope.message ="openFDA Data Set View";
 
       }).
       error(function(data, status, headers, config) {
+        alert("No results matching this term");
         $scope.error= data;
         $scope.foods="";
         console.log("Error in frontend app :"+data);
