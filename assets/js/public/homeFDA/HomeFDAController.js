@@ -155,6 +155,21 @@ $scope.message ="openFDA Data Set View";
       });
 
   }
+  $scope.itemsByPage=10;
+
+
+  $scope.columns = [{ field: 'recall_number' }, { field: 'report_date' }, { field: 'reason_for_recall' }, { field: 'city' },{ field: 'state' }, { field: 'classification' }];
+  $scope.gridOptions = {
+    enableColumnResizing: true,
+    enableSorting: true,
+    columnDefs: $scope.columns,
+    onRegisterApi: function(gridApi) {
+      $scope.gridApi = gridApi;
+    }
+  };
+
+
+
 
 
 
