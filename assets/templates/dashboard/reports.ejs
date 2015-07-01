@@ -1,3 +1,5 @@
+
+
 <div>
 	<snap-drawer>
 		<div class="snap-menu">
@@ -6,14 +8,16 @@
 				<!--<img src="images/flat-avatar.png" alt="" class="sidebar-img img-circle">-->
 			</div>
 			<ul class="snap-ul">
-				<li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
-				<li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
+        <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
+        <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT REPORTS </a></li>
+        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">VISUAL GRAPH</a></li>
         <li ng-class="{active: $state.includes('trends')}"><a ui-sref="trends">SEARCH TRENDS</a></li>
 
       </ul>
 		</div>
 	</snap-drawer>
 	<snap-dragger></snap-dragger>
+
 	<snap-content snap-opt-tap-to-close="false" class="bg-dark">
 		<a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
 			<span class="menutoggle">
@@ -26,8 +30,27 @@
 		<h2>Reports <small>Work with Chart.js and D3</small></h2>
 
       <div class="maincontainer">
-        <angular-chart options="options"></angular-chart>
+
+
+        <!--<highchart id="chart1" config="chartConfig"></highchart>-->
+
+
           </div>
+
+
+
+      <div class="span12">
+        <input ng-model="chartConfig.title.text">
+        <button ng-click="addSeries()">Add Series</button>
+        <button ng-click="addPoints()">Add Points to Random Series</button>
+        <button ng-click="removeRandomSeries()">Remove Random Series</button>
+        <button ng-click="swapChartType()">Line/Bar</button>
+        <button ng-click="toggleLoading()">Loading?</button>
+      </div>
+      <div class="row">
+        <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+      </div>
+
 
         </div>
 

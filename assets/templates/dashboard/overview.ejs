@@ -13,8 +13,8 @@
       </div>
       <ul class="snap-ul">
         <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
-        <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT DATA </a></li>
-        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
+        <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT REPORTS </a></li>
+        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">VISUAL GRAPH</a></li>
         <li ng-class="{active: $state.includes('trends')}"><a ui-sref="trends">SEARCH TRENDS</a></li>
 
       </ul>
@@ -44,7 +44,7 @@
       position:inherit;
       /*width: 600px;*/
     }
-    #slides_control img{width:100%; height: auto;
+    #slides_control img{width:100%; height: 300px;
       /*-webkit-border-radius: 20px;*/
       /*-moz-border-radius: 20px;*/
       /*border-radius: 20px;*/
@@ -76,6 +76,7 @@
     }
     /*responsive styles*/
     @media only screen and (max-width: 800px) {
+      #slides_control img{width:100%; height: auto;}
       .ng-table-vml-responsive {
         border-bottom: 1px solid #999999;
       }
@@ -158,23 +159,7 @@
       <!--2nd row-->
 
       <div class="row" style="background-color:#6D93C3;color:#000000;">
-        <!--<div class=" col-lg-12 col-xs-12" >-->
 
-        <!--<div class=" pannel2 panel-body col-lg-4 col-xs-12" style="color:#ffffff !important;">-->
-
-        <!--<ul  style="list-style-type:circle!important; "; >-->
-        <!--<li>-->
-        <!--Quick and easy query utilities using openFDA API data sets.-->
-        <!--</li>-->
-        <!--<li>    Device, Drug and Food Recall data query-->
-        <!--</li>-->
-
-        <!--</ul>-->
-
-        <!--</div>-->
-
-
-        <!--<div class=" pannel2 panel-body col-lg-7 col-xs-12">-->
 
 
         <div id="slides_control" panel>
@@ -191,13 +176,6 @@
         </div>
 
 
-        <!--</div>-->
-
-
-
-        <!--</div>-->
-
-
 
 
       </div>
@@ -209,21 +187,24 @@
     <!--part2 -->
 
 
+    <!--6D93C3-->
+    <div class="container-fluid"  style="background-color:#6D93C3;color:#333">
+      <div class=" col-lg-12 col-xs-12" style="text-align: center">
 
-    <div class="container-fluid" style="background-color:#f60000!important;;">
+        <div class=" col-lg-4 col-xs-12" >
+        <h1 style="margin-right: 15px;"> <img src="images/report_icon.png"  /></h1>
+          </div>
+        <div class=" col-lg-4 col-xs-12" >
+          <h1 style="margin-right: 15px;"> <img src="images/report_icon.png"  /></h1>
+        </div>
 
+        <div class=" col-lg-4 col-xs-12" >
+          <h1 style="margin-right: 15px;"> <img src="images/report_icon2.png"  /></h1>
+        </div>
 
 
 
     </div>
-    <!--6D93C3-->
-    <div class="container-fluid"  style="background-color:#f60000;color:#333">
-
-
-
-      <br>
-
-
 
       <!--new page-->
 
