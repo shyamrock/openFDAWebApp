@@ -157,54 +157,6 @@ $scope.message ="openFDA Data Set View";
   }
 
 
-  $scope.itemsByPage=10;
-  alert("adjlaskdf")
-  $scope.option = {
-    data: [
-      {
-        sales: 130,
-        income: 250
-      },
-      {
-        sales: 180,
-        income: 350
-      }
-    ],
-    dimensions: {
-      sales: {
-        type: 'bar'
-      },
-      income: {
-        axis: 'y2'
-      }
-    }
-  };
 
-  $scope.columns = [{ field: 'recall_number' }, { field: 'report_date' }, { field: 'reason_for_recall' }, { field: 'city' },{ field: 'state' }, { field: 'classification' }];
-  $scope.gridOptions = {
-    enableColumnResizing: true,
-    enableSorting: true,
-    columnDefs: $scope.columns,
-    onRegisterApi: function(gridApi) {
-      $scope.gridApi = gridApi;
-    }
-  };
-
-  var container = document.createElement('div');
-  var myEl = angular.element( document.querySelector( '#chart2' ) );
-  myEl.append(container);
-  window.chart = new Highcharts.Chart({
-    chart: {
-      renderTo: container,
-      height: 400
-    },
-    xAxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    },
-
-    series: [{
-      data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-    }]
-  });
 
 });
