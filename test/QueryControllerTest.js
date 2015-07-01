@@ -20,17 +20,21 @@ afterEach(function (done) {
 });
 
 
-describe("QueryController", function() {
+describe("Test Node API -> QueryController", function() {
   describe("#searchTrends", function() {
 
     it("returns some JSON", function(done) {
-      request(sails.hooks.http.app).get("/query/searchTrends").end(function(err, res) {
-        expect(res.text).to.be.a('string');
+      request(sails.hooks.http.app).get("/query/searchTrends")
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end(function(err, res) {
+          if (err) throw err;
         done();
 
       });
     });
   });
+
 });
 
 after(function(done) {
