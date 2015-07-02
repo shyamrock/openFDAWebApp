@@ -44,7 +44,7 @@ module.exports = {
 
 
 
-   var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&limit='+searchLimit+'&skip='+skip;
+     var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&limit='+searchLimit+'&skip='+skip;
      // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
     console.log("request url-->"+requestUrl);
     var returnJson ="";

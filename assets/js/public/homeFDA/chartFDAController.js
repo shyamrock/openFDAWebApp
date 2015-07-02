@@ -30,7 +30,7 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
         }
       },
     title: {
-      text: 'Hello'
+      text: 'Food Recall with Ice Cream for Reason for Recall'
     },
 
     loading: false
