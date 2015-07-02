@@ -25,6 +25,12 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
     },
     {
       image: 'images/img_06.png'
+    },
+    {
+      image: 'images/img_07.png'
+    },
+    {
+      image: 'images/img_08.png'
     }
   ];
 
@@ -89,9 +95,6 @@ var url= 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_
 
 
 
-          }).
-          error(function(data, status, headers, config) {
-            console.log("Error in frontend app :"+data);
           });
 
 
