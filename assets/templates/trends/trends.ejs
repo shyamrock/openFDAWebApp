@@ -38,7 +38,6 @@
         <table ng-table="tableParams" class="table " export-csv="csv">
           <tr ng-repeat="item in $data">
             <td data-title="'searchDate'">{{item.searchDate|date : format : timezone}}</td>
-            <td data-title="'User IP'">{{item.ip}}</td>
             <td data-title="'Search Type'">{{ item.searchType | uppercase }}</td>
             <td data-title="'Search Term'">{{item.searchTerm|uppercase}}</td>
 
