@@ -34,6 +34,7 @@ module.exports = {
   search: function (req, res) {
     // https://api.fda.gov/food/enforcement.json?limit=10
 
+    var api_key=sails.config.globals.openFDAAPI_KEY;
     var selectType = req.query.selectType;
     var searchItem = req.query.searchItem;
     var searchLimit = req.query.searchLimit;
@@ -44,7 +45,7 @@ module.exports = {
 
 
 
-     var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&limit='+searchLimit+'&skip='+skip;
+     var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?api_key='+api_key+'&search=reason_for_recall:"'+searchItem+'"&limit='+searchLimit+'&skip='+skip;
      // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
     console.log("request url-->"+requestUrl);
     var returnJson ="";

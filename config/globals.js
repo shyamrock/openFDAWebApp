@@ -60,4 +60,6 @@ module.exports.globals = {
   ****************************************************************************/
 
 	// models: true
+
+  openFDAAPI_KEY:"uydGXtfuioPKYmdMwhILUZgKoNk0FB90pofwpG2x"
 };

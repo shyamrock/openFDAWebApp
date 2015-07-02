@@ -27,7 +27,7 @@ describe("Test Node API -> QueryController/SearchTrends", function() {
     it("returns some JSON", function(done) {
       request(sails.hooks.http.app).get("/query/searchTrends")
         .expect('Content-Type', /json/)
-        .expect(404)
+        .expect(200)
         .end(function(err, res) {
           if (err) throw err;
            done();
