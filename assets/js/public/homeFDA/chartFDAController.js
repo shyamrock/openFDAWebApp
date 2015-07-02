@@ -2,34 +2,66 @@
  * Created by vml on 7/1/2015.
  */
 
-angular.module('openFDA').controller('ChartController', function($scope, $location, $filter) {
+angular.module('openFDA').controller('ChartController', function($scope, $location, $filter,$http) {
 
+  $scope.chartConfig = {
+    options: {
+      chart: {
+        type: 'bar'
+      }
+    },
+    series: [{
+      data: []
+    }],
+    yAxis: {
+      title: {
+        text: "COUNT"
+      }},
+      xAxis: {
+        dateTimeLabelFormats: { // don't display the dummy year
+          month: '%e. %b',
+          year: '%b'
+        },
+        type: 'datetime',
+        title: {
+          text: "DATE/YEAR"
+        }
+      },
+    title: {
+      text: 'Hello'
+    },
 
-  $scope.addPoints = function () {
-    var seriesArray = $scope.chartConfig.series
-    var rndIdx = Math.floor(Math.random() * seriesArray.length);
-    seriesArray[rndIdx].data = seriesArray[rndIdx].data.concat([1, 10, 20])
-  };
-
-  $scope.addSeries = function () {
-    var rnd = []
-    for (var i = 0; i < 10; i++) {
-      rnd.push(Math.floor(Math.random() * 20) + 1)
-    }
-    $scope.chartConfig.series.push({
-      data: rnd
-    })
+    loading: false
   }
+  $scope.result="";
 
-  $scope.removeRandomSeries = function () {
-    var seriesArray = $scope.chartConfig.series
-    var rndIdx = Math.floor(Math.random() * seriesArray.length);
-    seriesArray.splice(rndIdx, 1)
-  }
+  var url= 'https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"ice cream"&count=report_date';
+  $http({
+    url: url, method: "GET"
+  }).
+    success(function(data, status, headers, config) {
+      $scope.result = data.results;
+      var rnd = [];
+
+      angular.forEach( $scope.result, function(result) {
+        var vml=[];
+        $scope.vml=[result.time,result.count];
+        vml.push( $scope.vml);
+
+        rnd.push(vml);
+
+      });
+      $scope.chartConfig.series.push({  data: rnd  });
+    alert(rnd);
+      console.log("x and y"+rnd);
+    });
+
+
 
   $scope.swapChartType = function () {
     if (this.chartConfig.options.chart.type === 'line') {
       this.chartConfig.options.chart.type = 'bar'
+      this.chartConfig.options.chart.zoomType = 'x'
     } else {
       this.chartConfig.options.chart.type = 'line'
       this.chartConfig.options.chart.zoomType = 'x'
@@ -40,21 +72,7 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
     this.chartConfig.loading = !this.chartConfig.loading
   }
 
-  $scope.chartConfig = {
-    options: {
-      chart: {
-        type: 'bar'
-      }
-    },
-    series: [{
-      data: [10, 15, 12, 8, 7]
-    }],
-    title: {
-      text: 'Hello'
-    },
 
-    loading: false
-  }
 
 
 });
