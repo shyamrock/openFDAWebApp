@@ -10,8 +10,38 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
 
 
 
+  $scope.submit = function() {
+
+    alert("hai");
+    $scope.result = "";
+    $scope.formatedVmlAray = [];
+
+    var selectType=$scope.selectType;//food,drug,etc
+    var searchItem=$scope.searchItem;
+
+     var url = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&count=report_date';
+    $http({url: url, method: "GET"}).
+      success(function (data, status, headers, config) {
+        $scope.result = data.results;
+        var rnd = [];
+
+        $scope.chartConfig.series=[];
+        angular.forEach($scope.result, function (result) {
+          var vml = [];
+          var datetime1 = result.time
 
 
+          var yyyy = datetime1.substring(0, 4), mm = datetime1.substring(4, 6), dd = datetime1.substring(6, 8), datejoined = yyyy + "," + mm + "," + dd;
+          var x = Date.UTC(yyyy, mm, dd);
+
+          var i = 0;
+
+          rnd.push([x, result.count]);
+        });
+        $scope.chartConfig.series.push({data: rnd});
+      });
+
+  }
 
 
 

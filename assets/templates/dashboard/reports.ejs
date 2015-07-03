@@ -60,18 +60,44 @@
         <h3>VISUAL GRAPH</h3>
       </div>
 
+      <div class="span12">
 
+        <a ng-click="swapChartType()">Line/Bar</a>
+      </div>
       <div class="row">
         <div class=" col-lg-11 col-xs-12" >
            <highchart id="chart1" config="chartConfig" class="span10"></highchart>
         </div>
       </div>
       <br>
-      <div class="span12">
-        <input ng-model="chartConfig.title.text">
 
-        <button ng-click="swapChartType()">Line/Bar</button>
-      </div>
+
+      <form role="form"  ng-submit="submit()">
+
+        <div class="form-groups">
+          <div class="form-group  col-lg-offset-1 col-lg-6 col-xs-12">
+            <input  class="form-control input-lg" ng-model="searchItem" type="text" placeholder="Any word that is in Reasons for Recall">
+          </div>
+          <div class="form-group col-lg-2 col-xs-12">
+            <select id="searchtype" class="form-control input-lg" ng-model="selectType" >
+              <option value="device">Device Recalls</option>
+              <option value="drug">Drug Recalls</option>
+              <option value="food" selected="selected">Food Recalls</option>
+            </select>
+
+          </div>
+
+        </div>
+
+        <div class="button-container col-lg-2 col-xs-4">
+          <button type="submit" class="btn login" style="color:#333!important ;padding: 10px 10px">submit  <i class="fa fa-search" ></i></button>
+        </div>
+
+
+      </form>
+
+
+
 
         </div>
 
