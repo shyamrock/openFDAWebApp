@@ -29,6 +29,7 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
         var rnd = [];
 
         $scope.chartConfig.series=[];
+        $scope.chartConfig.title.text= $scope.selectType+'Recall with '+$scope.searchItem+' for Reason for Recall'
         angular.forEach($scope.result, function (result) {
           var vml = [];
           var datetime1 = result.time
@@ -57,9 +58,7 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
       $scope.result = data.results;
       var rnd = [];
           $scope.formatedVmlAray=[   { name: "2012",data:[]}
-                                    //,{ name: "2013",data:[]}
-                                    //,{ name: "2014",data:[]}
-                                    //,{ name: "2015",data:[]}
+
                                   ]
 
 
