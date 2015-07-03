@@ -94,6 +94,46 @@ module.exports = {
 
 
 
+  },
+  searchVisual: function (req, res) {
+    // https://api.fda.gov/food/enforcement.json?limit=10
+
+    var api_key=sails.config.globals.openFDAAPI_KEY;
+    var selectType = req.query.selectType;
+    var searchItem = req.query.searchItem;
+
+
+    var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&count=report_date';
+    // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
+    console.log("request url-->"+requestUrl);
+    var returnJson ="";
+    request(requestUrl, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        returnJson = body;
+
+        var ip = req.headers['x-forwarded-for'] ||
+          req.connection.remoteAddress ||
+          req.socket.remoteAddress ||
+          req.connection.socket.remoteAddress;
+
+        SearchProfile.create({
+          ip:ip,
+          searchType:selectType,
+          searchTerm:searchItem,
+          searchDate:new Date()
+        }).exec(function (err, event) {
+          if (err) {
+            console.log("Error: "+err);
+          }
+        });
+
+         res.send(returnJson);
+      }
+
+    })
+
+
+
   }
 
 };

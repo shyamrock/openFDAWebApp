@@ -12,16 +12,19 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
 
   $scope.submit = function() {
 
-    alert("hai");
     $scope.result = "";
     $scope.formatedVmlAray = [];
 
     var selectType=$scope.selectType;//food,drug,etc
     var searchItem=$scope.searchItem;
 
-     var url = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&count=report_date';
-    $http({url: url, method: "GET"}).
-      success(function (data, status, headers, config) {
+
+    var url="query/searchVisual";
+    $http({
+      url: url, method: "GET",
+      params: {selectType: selectType,searchItem:searchItem}
+    }).
+           success(function (data, status, headers, config) {
         $scope.result = data.results;
         var rnd = [];
 

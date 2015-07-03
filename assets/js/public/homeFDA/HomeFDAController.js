@@ -83,8 +83,7 @@ angular.module('openFDA').controller('HomeFDAController', function($scope,$http,
         var limit=10;
         var skip=skip+10;
 
-
-var url= 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&limit='+limit+'&skip='+skip;
+ var url= 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&limit='+limit+'&skip='+skip;
         $http({
           url: url, method: "GET"
         }).
