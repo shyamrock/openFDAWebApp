@@ -4,22 +4,131 @@
 
 angular.module('openFDA').controller('ChartController', function($scope, $location, $filter,$http) {
 
+
+
+
+
+
+
+
+
+
+
+
+
+  $scope.result="";
+  $scope.formatedVmlAray=[];
+  var url= 'https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"ice cream"&count=report_date';
+  $http({    url: url, method: "GET"  }).
+    success(function(data, status, headers, config) {
+      $scope.result = data.results;
+      var rnd = [];
+          $scope.formatedVmlAray=[   { name: "2012",data:[]}
+                                    //,{ name: "2013",data:[]}
+                                    //,{ name: "2014",data:[]}
+                                    //,{ name: "2015",data:[]}
+                                  ]
+
+
+        angular.forEach($scope.result, function (result) {
+        var vml = [];
+        var datetime1 = result.time
+
+        //  vml.push( $scope.vml);
+
+        var yyyy = datetime1.substring(0, 4),mm = datetime1.substring(4, 6), dd = datetime1.substring(6, 8),datejoined = yyyy + "," + mm + "," + dd;
+        var x = Date.UTC(yyyy, mm, dd);
+
+          var i=0;
+          /*if(yyyy==='2012')
+          {
+            angular.forEach($scope.formatedVmlAray, function (array) {
+              if(array.name==='2012')
+              {
+                  $scope.formatedVmlAray.push(            {    data: [   [Date.UTC(1970, 10, i+1), ],
+                                                                          [Date.UTC(1970, 11, 4), 0.28],
+                                                                           [Date.UTC(1971, 10, 9), 0.25]
+                                                                     ]
+                                                          }
+                                              );
+
+                //alert("its matching");
+              }
+
+
+              });
+
+            //alert(yyyy);
+
+          }*/
+
+        rnd.push([x, result.count]);
+          //$scope.chartConfig.series.push( $scope.formatedVmlAray[0]);
+      });
+      //$scope.formatedVmlAray=[];
+      //$scope.formatedVmlAray.push({ name: "Winter 2012-2013",data: [   [Date.UTC(1973, 9, 21), 0],[Date.UTC(1973, 10, 4), 0.28], [Date.UTC(1973, 10, 9), 0.25]      ] })
+      //$scope.formatedVmlAray.push({ name: "Winter 2013-2014",data: [   [Date.UTC(1972, 9, 01), 4],[Date.UTC(1972, 10, 7), 0.58], [Date.UTC(1972, 10, 7), 0.55]      ] })
+      //$scope.formatedVmlAray.push({ name: "Winter 2013-2014",data: [   [Date.UTC(1972, 10, 11), 4],[Date.UTC(1972, 1, 7), 0.98], [Date.UTC(1972, 10, 7), 0.55]      ] })
+      //
+    //  $scope.chartConfig.series.push( $scope.formatedVmlAray[0]);
+      //$scope.chartConfig.series.push( $scope.formatedVmlAray[1]);
+      //$scope.chartConfig.series.push( $scope.formatedVmlAray[2]);
+      $scope.chartConfig.series.push( {data:rnd});
+    });
+
+
+
+  //if(yyyy==='2012')
+  //{
+  //
+  // $scope.formatedVmlAray.push({ name: "Winter 2012-2013",data: [       [Date.UTC(1970, 9, 21), 0],[Date.UTC(1970, 10, 4), 0.28], [Date.UTC(1970, 10, 9), 0.25]      ] })
+  //  alert(yyyy);
+  //}
+  //if(yyyy==='2013')
+  //{
+  //  alert(yyyy);
+  //}
+  //if(yyyy==='2014')
+  //{
+  //  alert(yyyy);
+  //}
+  //if(yyyy==='2015')
+  //{
+  //  alert(yyyy);
+  //}
+
+
+
+  //$scope.serieses=[{
+  //                name: "Winter 2012-2013",
+  //                data: [       [Date.UTC(1970, 9, 21), 0],[Date.UTC(1970, 10, 4), 0.28], [Date.UTC(1970, 10, 9), 0.25]      ]
+  //                  },
+  //                  {
+  //                    name: "Winter 2013-2014",
+  //                    data: [        [Date.UTC(1970, 9, 29), 0],[Date.UTC(1971, 0, 1), 1.66],[Date.UTC(1971, 0, 10), 1.8]      ]
+  //                  },
+  //                  {
+  //                    name: "Winter 2014-2015",
+  //                    data: [        [Date.UTC(1970, 10, 25), 0],[Date.UTC(1970, 11, 25), 1.64],[Date.UTC(1971, 0, 4), 1.6]     ]
+  //                  }
+  //                  ];
+
+
   $scope.chartConfig = {
     options: {
       chart: {
-        type: 'bar'
+        type: 'spline'
       }
     },
-    series: [{
-      data: []
-    }],
+
     yAxis: {
       title: {
         text: "COUNT"
       }},
+
       xAxis: {
         dateTimeLabelFormats: { // don't display the dummy year
-          month: '%b \'%y',
+          month: '%e \ %b \'%y',
           year: '%Y'
           //month: '%e. %b',
           //year: '%b'
@@ -29,66 +138,25 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
           text: "DATE/YEAR"
         }
       },
+    series:[ ],
     title: {
       text: 'Food Recall with Ice Cream for Reason for Recall'
+    },
+    subtitle: {
+      text: 'Irregular time count in Graph'
     },
 
     loading: false
   }
-  $scope.result="";
-
-  var url= 'https://api.fda.gov/food/enforcement.json?search=reason_for_recall:"ice cream"&count=report_date';
-  $http({
-    url: url, method: "GET"
-  }).
-    success(function(data, status, headers, config) {
-      $scope.result = data.results;
-      var rnd = [];
-
-      angular.forEach( $scope.result, function(result) {
-        var vml=[];
-        var datetime1=result.time
-      //$scope.vml=[result.count];
-      //  vml.push( $scope.vml);
-      var yyyy = datetime1.substring(0, 4);
-        var mm= datetime1.substring(4, 6);
-        var dd= datetime1.substring(6, 8);
-        var datejoined=yyyy+","+mm+","+dd
-        var x = Date.UTC(yyyy,mm,dd);
-        //alert(datejoined);
-        rnd.push([x,result.count]);
-
-      });
-      $scope.chartConfig.series.push({  data: rnd  });
 
 
+  console.log( $scope.formatedVmlAray);
 
-     //'T00:00:00'">{{ dat  | date:'dd/MM/yyyy'
+//for(var i=0; i<$scope.serieses.length;i++) {
+//  $scope.chartConfig.series.push($scope.serieses[i]);
+//}
 
-      //rnd= [
-      //  [Date.UTC(1970, 9, 21), 0],
-      //  [Date.UTC(1970, 10, 4), 0.28],
-      //  [Date.UTC(1970, 10, 9), 0.25],
-      //  [Date.UTC(1970, 10, 27), 0.2],
-      //  [Date.UTC(1970, 11, 2), 0.28],
-      //  [Date.UTC(1970, 11, 26), 0.28],
-      //  [Date.UTC(1970, 11, 29), 0.47],
-      //  [Date.UTC(1971, 0, 11), 0.79],
-      //  [Date.UTC(1971, 0, 26), 0.72],
-      //  [Date.UTC(1971, 1, 3), 1.02],
-      //  [Date.UTC(1971, 1, 11), 1.12],
-      //  [Date.UTC(1971, 1, 25), 1.2],
-      //  [Date.UTC(1971, 2, 11), 1.18],
-      //  [Date.UTC(1971, 3, 11), 1.19],
-      //  [Date.UTC(1971, 4, 1), 1.85],
-      //  [Date.UTC(1971, 4, 5), 2.22],
-      //  [Date.UTC(1971, 4, 19), 1.15],
-      //  [Date.UTC(1971, 5, 3), 0]
-      //]
-      console.log("x and y"+rnd);
-      //$scope.chartConfig.series.push({  data: rnd  });
 
-    });
 
 
 
