@@ -36,61 +36,54 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <snap-content snap-opt-tap-to-close="false">
+  <snap-content snap-opt-tap-to-close="false" class="bg-dark">
     <!--part1-->
-    <div class="container-fluid" style="background-color:#6D93C3;">
-      <div class="fr">
-      <h2>ENFORCEMENT REPORTS</h2>
-      <!--menu 3 lines open and close-->
+    <!--<div class="container-fluid" style="background-color:#6D93C3;">-->
+
       <div class="row" style="background-color:#6D93C3;">
-        <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
-                          <span class="menutoggle">
-                            <i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
-                            <i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
-                          </span>
-        </a>
-        <h1 style="float: right;margin-right: 15px;"> <img src="images/fda_logo.png"  /></h1>
-      </div>
-      <hr>
-      <!--2nd row-->
+        <div class=" col-lg-12  col-md-12  col-sm-12 col-xs-12" >
+          <div class=" col-lg-1 col-md-2 col-sm-12 col-xs-12 " >
+            <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+                                  <span class="menutoggle">
+                                    <i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
+                                    <i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
+                                  </span>
 
-     <!-- <div class="row" style="background-color:#6D93C3;color:#000000;">
+            </a>
+          </div>
 
+          <div class=" col-lg-6 col-md-6 hidden-sm hidden-xs" >
+            <h2 > <a ui-sref="overview"><i class="fa fa-home"></i></a> ENFORCEMENT REPORTS </h2>
+          </div>
 
-
-        <div id="slides_control" panel>
-          <div>
-            <carousel interval="myInterval">
-              <slide ng-repeat="slide in slides" active="slide.active">
-                <img ng-src="{{slide.image}}">
-                <div class="carousel-caption">
-
-                </div>
-              </slide>
-            </carousel>
+          <div style="float: right;" class=" col-lg-5 col-md-4 col-sm-6 col-xs-12" >
+            <h1 style="float: right;"> <img src="images/fda_logo.png"  /></h1>
           </div>
         </div>
-
-
-
       </div>
--->
 
 
-    </div>
+      <div class="fr">
 
-    <!--part2 -->
+      <!--menu 3 lines open and close-->
 
 
 
-    <div class="container-fluid" style="background-color:#6D93C3!important;;">
+      <!--<hr>-->
+
+
+    <!--part2 style="background-color:#6D93C3!important;"-->
+
+
+
+    <div class="container-fluid" >
 
       <div class="width: 100%;">
         <div class=" col-lg-12 col-xs-12" >
-          <div class=" panel3 " style="overflow: inherit">
+          <div  style="overflow: inherit">
 
 
-            <div  style="background-color: #6D93C3 !important;text-align: center;">
+            <div  style="text-align: center;">
               <br>
               <form role="form"  ng-submit="searchText(0,0)">
 
@@ -111,7 +104,7 @@
                 </div>
 
                 <div class="button-container col-lg-2 col-xs-4">
-                  <button type="submit" class="btn login" style="padding: 10px 10px">submit  <i class="fa fa-search" ></i></button>
+                  <button type="submit" class="btn login" style="color:#333!important ;padding: 10px 10px">submit  <i class="fa fa-search" ></i></button>
                 </div>
 
 
@@ -130,7 +123,7 @@
 
     </div>
 
-    <div class="container-fluid"  style="background-color:#6D93C3;color:#333">
+    <div class="container-fluid"  style="color:#333">
 
       <div ng-if="meta">
         <small style="color:#ffc520"> {{meta.disclaimer}}</small>

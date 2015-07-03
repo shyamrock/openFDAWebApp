@@ -7,6 +7,7 @@
         <img src="images/fda_logo.png"  />
 				<!--<img src="images/flat-avatar.png" alt="" class="sidebar-img img-circle">-->
 			</div>
+
 			<ul class="snap-ul">
         <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
         <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT REPORTS </a></li>
@@ -19,15 +20,33 @@
 	<snap-dragger></snap-dragger>
 
 	<snap-content snap-opt-tap-to-close="false" class="bg-dark">
-		<a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
-			<span class="menutoggle">
-				<i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
-				<i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
-			</span>
-		</a>
+
+    <div class="row" style="background-color:#6D93C3;">
+      <div class=" col-lg-12  col-md-12  col-sm-12 col-xs-12" >
+              <div class=" col-lg-1 col-md-2 col-sm-12 col-xs-12 " >
+              <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+                                  <span class="menutoggle">
+                                    <i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
+                                    <i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
+                                  </span>
+
+              </a>
+              </div>
+
+              <div class=" col-lg-6 col-md-6 hidden-sm hidden-xs" >
+                <h2 > <a ui-sref="overview"><i class="fa fa-home"></i></a> VISUAL GRAPH </h2>
+              </div>
+
+              <div style="float: right;" class=" col-lg-5 col-md-4 col-sm-6 col-xs-12" >
+                <h1 style="float: right;"> <img src="images/fda_logo.png"  /></h1>
+              </div>
+      </div>
+    </div>
 
 		<div class="fr">
-		<h2>Reports <small>Work with Chart.js and D3</small></h2>
+		<h2><small></small></h2>
+
+
 
       <div class="maincontainer">
 
@@ -37,18 +56,22 @@
 
           </div>
 
+      <div class=" visible-sm visible-xs">
+        <h3>VISUAL GRAPH</h3>
+      </div>
 
 
+      <div class="row">
+        <div class=" col-lg-11 col-xs-12" >
+           <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+        </div>
+      </div>
+      <br>
       <div class="span12">
         <input ng-model="chartConfig.title.text">
 
         <button ng-click="swapChartType()">Line/Bar</button>
-        <button ng-click="toggleLoading()">Loading?</button>
       </div>
-      <div class="row">
-        <highchart id="chart1" config="chartConfig" class="span10"></highchart>
-      </div>
-
 
         </div>
 
