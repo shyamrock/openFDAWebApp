@@ -6,8 +6,9 @@
 				<!--<img src="images/flat-avatar.png" alt="" class="sidebar-img img-circle">-->
 			</div>
 			<ul class="snap-ul">
-				<li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
-				<li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">REPORTS</a></li>
+        <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
+        <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT REPORTS </a></li>
+        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">VISUAL GRAPH</a></li>
         <li ng-class="{active: $state.includes('trends')}"><a ui-sref="trends">SEARCH TRENDS</a></li>
 
       </ul>
@@ -35,7 +36,13 @@
 
         <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
 
-        <table ng-table="tableParams" class="table " export-csv="csv">
+        <table ng-table="tableParams" class="table " class="table ng-table-vml-responsive" export-csv="csv" style="text-align: center">
+          <tr>
+            <th>Search Date</th>
+            <th >Search Type</th>
+            <th >Search Term</th>
+
+          </tr>
           <tr ng-repeat="item in $data">
             <td data-title="'searchDate'">{{item.searchDate|date : format : timezone}}</td>
             <td data-title="'Search Type'">{{ item.searchType | uppercase }}</td>

@@ -2611,7 +2611,7 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 	background-color: #333
 }
 .btn-primary {
-	color:#0F0005;
+	/*color:#0F0005;*/
 	background-color: rgba(6, 104, 199, 0.19);
 	border-color: #2E5CE6
 }
@@ -5787,7 +5787,7 @@ snap-content .menutoggle .fa {
 	top: 25px
 }
 snap-drawer {
-	background:rgba(0, 145, 198, 0.3)
+	background:rgba(109, 147, 195, 1);
 }
 snap-drawer a {
 	color: #fff
@@ -5828,7 +5828,7 @@ snap-drawer ul.snap-ul li a:hover {
 	text-decoration: none
 }
 .bg-dark {
-	background: #34495e
+	background: #5889BA
 }
 * a:hover {
 	cursor: pointer
@@ -7777,3 +7777,116 @@ html, body {
   width: 1250px;
   height: 800px;
 }
+
+
+
+
+/*new copied from enforment data*/
+#slides_control > div{
+
+  height: auto;
+}
+img{
+  margin:auto;
+  width: auto;
+
+}
+#slides_control {
+
+  position:inherit;
+  /*width: 600px;*/
+}
+#slides_control img{width:100%; height: auto;
+  /*-webkit-border-radius: 20px;*/
+  /*-moz-border-radius: 20px;*/
+  /*border-radius: 20px;*/
+}
+
+.pannel2
+{
+  margin-left: 40px;
+  font-weight: 400;
+  /*min-height: 250px;*/
+  font-size: 25px;
+}
+table
+{
+  border: 1px solid #f7f7f7;
+}
+tr:first-child{
+  background-color: #5e83b8 !important;
+  color: #f8f8f8;
+
+}
+tr:nth-of-type(odd) {
+  background-color: #9bb8dc;
+
+}
+tr:nth-of-type(even) {
+  background-color: #82a2cb !important;
+  color: seashell;
+}
+/*responsive styles*/
+@media only screen and (max-width: 800px) {
+  .ng-table-vml-responsive {
+    border-bottom: 1px solid #999999;
+  }
+  .ng-table-vml-responsive tr {
+    border-top: 1px solid #999999;
+    border-left: 1px solid #999999;
+    border-right: 1px solid #999999;
+  }
+  .ng-table-vml-responsive td:after {
+    position: absolute;
+    padding: 8px;
+    left: 0;
+    top: 0;
+    width: 50%;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+  .ng-table-vml-responsive thead tr th {
+    text-align: left;
+  }
+  .ng-table-vml-responsive thead tr.ng-table-filters th {
+    padding: 0;
+  }
+  .ng-table-vml-responsive thead tr.ng-table-filters th form > div {
+    padding: 8px;
+  }
+  .ng-table-vml-responsive td {
+    border: none;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+  }
+  .ng-table-vml-responsive td:before {
+    content: attr(data-title-text);
+  }
+  .ng-table-vml-responsive,
+  .ng-table-vml-responsive thead,
+  .ng-table-vml-responsive tbody,
+  .ng-table-vml-responsive th,
+  .ng-table-vml-responsive td,
+  .ng-table-vml-responsive tr {
+    display: block;
+  }
+}
+/*end responsive styles*/
+
+
+
+
+.panel3
+{
+  background-color: #6D93C3;
+  /*border: 5px solid #E4E0E0;*/
+  color: #000000;
+  /*-webkit-border-radius: 20px;*/
+  /*-moz-border-radius: 20px;*/
+  /*border-radius: 20px;*/
+}
+/*end new copied*/
