@@ -13,7 +13,7 @@
         <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT REPORTS </a></li>
         <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">VISUAL GRAPH</a></li>
         <li ng-class="{active: $state.includes('trends')}"><a ui-sref="trends">SEARCH TRENDS</a></li>
-
+        <li ng-class="{active: $state.includes('drugLabels')}"><a ui-sref="drugLabels">DRUGS LABELING</a></li>
       </ul>
 		</div>
 	</snap-drawer>
@@ -60,18 +60,6 @@
         <h3>VISUAL GRAPH</h3>
       </div>
 
-      <div class="span12">
-
-        <a ng-click="swapChartType()">Line/Bar</a>
-      </div>
-      <div class="row">
-        <div class=" col-lg-11 col-xs-12" >
-           <highchart id="chart1" config="chartConfig" class="span10"></highchart>
-        </div>
-      </div>
-      <br>
-
-
       <form role="form"  ng-submit="submit()">
 
         <div class="form-groups">
@@ -95,6 +83,29 @@
 
 
       </form>
+      <div class="row">
+        <div class=" col-lg-11 col-xs-12" >
+           <highchart id="chart1" config="chartConfig" class="span10"></highchart>
+        </div>
+      </div>
+      <br>
+      <div class="span12">
+
+        <div class=" col-lg-11 col-xs-12" >
+          <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+            <a ng-click="swapChartTypeBar()">Bar</a>
+          </div>
+          <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+            <a ng-click="swapChartTypeLine()">Line</a>
+          </div>
+          <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+            <a ng-click="swapChartTypeSpline()">Spline</a>
+          </div>
+        </div>
+      </div>
+
+
+
 
 
 

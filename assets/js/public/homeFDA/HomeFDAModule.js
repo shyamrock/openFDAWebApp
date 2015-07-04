@@ -1,5 +1,8 @@
 var app=angular.module('openFDA', ['ui.bootstrap','ui.router','snap','ngAnimate', 'ngTable','ngTableExport','highcharts-ng','ui.grid','ui.grid.edit']);//'angularChart'
+app.run(function($rootScope) {
+  $rootScope.details = "vml";
 
+});
 app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.when('/dashboard', '/dashboard/overview');
@@ -45,6 +48,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
       parent: 'dashboard',
       templateUrl: '/templates/trends/trends.ejs',
       controller: 'SearchTrendsController'
+    })
+    .state('drugLabels', {
+      url: '/drugLabels',
+      parent: 'dashboard',
+      templateUrl: '/templates/dashboard/drugLabels.ejs',
+      controller: 'DrugLabelingController'
+    })
+    .state('drugLabelDetailed', {
+      url: '/drugLabelDetailed',
+      parent: 'dashboard',
+      templateUrl: '/templates/dashboard/drugLabelDetailed.ejs',
+      controller: 'HomeFDAController'
     })
     .state('enforcementData', {
       url: '/enforcementData',

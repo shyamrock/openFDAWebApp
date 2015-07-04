@@ -16,7 +16,7 @@
         <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT REPORTS </a></li>
         <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">VISUAL GRAPH</a></li>
         <li ng-class="{active: $state.includes('trends')}"><a ui-sref="trends">SEARCH TRENDS</a></li>
-
+        <li ng-class="{active: $state.includes('drugLabels')}"><a ui-sref="drugLabels">DRUGS LABELING</a></li>
       </ul>
     </div>
   </snap-drawer>
@@ -52,27 +52,28 @@
     <!--part1-->
     <!--<div class="container-fluid" style="background-color:#6D93C3;">-->
 
-      <div class="row" style="background-color:#6D93C3;">
-        <div class=" col-lg-12  col-md-12  col-sm-12 col-xs-12" >
-          <div class=" col-lg-1 col-md-2 col-sm-12 col-xs-12 " >
-            <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+    <div class="row" style="background-color:#6D93C3;">
+      <div class=" col-lg-12  col-md-12  col-sm-12 col-xs-12" >
+        <div class=" col-lg-1 col-md-1 col-sm-2 col-xs-4 " >
+          <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
                                   <span class="menutoggle">
                                     <i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
                                     <i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
                                   </span>
 
-            </a>
-          </div>
+          </a>
+          <h2  style="padding-top: 5px;padding-left: 40px"> <a ui-sref="overview"><i class="fa fa-home"></i></a></h2>
+        </div>
 
-          <div class=" col-lg-6 col-md-6 hidden-sm hidden-xs" >
-            <h2 > <a ui-sref="overview"><i class="fa fa-home"></i></a> ENFORCEMENT REPORTS </h2>
-          </div>
+        <div class=" col-lg-8 col-md-8 hidden-sm hidden-xs" >
+          <h2 style="text-align: center">  ENFORCEMENT REPORTS   </h2>
+        </div>
 
-          <div style="float: right;" class=" col-lg-5 col-md-4 col-sm-6 col-xs-12" >
-            <h1 style="float: right;"> <img src="images/fda_logo.png"  /></h1>
-          </div>
+        <div style="float: right;" class=" col-lg-2 col-md-3 col-sm-6 col-xs-8" >
+          <h1 style="float: right;"> <img src="images/fda_logo.png"  /></h1>
         </div>
       </div>
+    </div>
 
 
       <div class="fr">

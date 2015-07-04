@@ -1,0 +1,107 @@
+<div>
+  <snap-drawer>
+    <div class="snap-menu">
+      <div class="sidebar-header text-center">
+        <img src="images/fda_logo.png"  />
+        <!--<img src="images/flat-avatar.png" alt="" class="sidebar-img img-circle">-->
+      </div>
+      <ul class="snap-ul">
+        <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">HOME</a></li>
+        <li ng-class="{active: $state.includes('enforcementData')}"><a ui-sref="enforcementData">ENFORCEMENT REPORTS </a></li>
+        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">VISUAL GRAPH</a></li>
+        <li ng-class="{active: $state.includes('trends')}"><a ui-sref="trends">SEARCH TRENDS</a></li>
+        <li ng-class="{active: $state.includes('drugLabels')}"><a ui-sref="drugLabels">DRUGS LABELING</a></li>
+
+      </ul>
+    </div>
+  </snap-drawer>
+
+  <snap-dragger></snap-dragger>
+  <snap-content snap-opt-tap-to-close="false" class="bg-dark">
+
+    <div class="row" style="background-color:#6D93C3;">
+      <div class=" col-lg-12  col-md-12  col-sm-12 col-xs-12" >
+        <div class=" col-lg-1 col-md-1 col-sm-2 col-xs-4 " >
+          <a href="" snap-toggle="left" ng-click="menuOpen = !menuOpen">
+                                  <span class="menutoggle">
+                                    <i ng-hide="menuOpen" class="fa fa-bars fa-2x" ></i>
+                                    <i ng-show="menuOpen" class="fa fa-times fa-2x" ></i>
+                                  </span>
+
+          </a>
+         <h2  style="padding-top: 5px;padding-left: 40px"> <a ui-sref="overview"><i class="fa fa-home"></i></a></h2>
+        </div>
+
+        <div class=" col-lg-8 col-md-8 hidden-sm hidden-xs" >
+          <h2 style="text-align: center">  DRUG LABELS  </h2>
+        </div>
+
+        <div style="float: right;" class=" col-lg-2 col-md-3 col-sm-6 col-xs-8" >
+          <h1 style="float: right;"> <img src="images/fda_logo.png"  /></h1>
+        </div>
+      </div>
+    </div>
+
+
+    <style>
+      ul li {
+        list-style-type: circle;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      tr:nth-of-type(odd) {
+        background-color: #9bb8dc;
+        color: #000011;
+
+      }
+      tr:nth-of-type(even) {
+        background-color: #82a2cb !important;
+        color: seashell;
+      }
+
+    </style>
+
+    <div class="fr" style="padding-top: 10px">
+
+      <div class=" visible-sm " >
+        <h2 style="text-align: center"> DRUG lABELS  </h2>
+      </div>
+      <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
+
+        <div ng-show="loading" class="loading">LOADING...</div>
+
+        <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
+
+        <table ng-table="tableParams" class="table ng-table-vml-responsive" export-csv="csv" style="text-align: center">
+<tr style="text-align: left!important;"><th>GENERIC NAME
+  </th>
+  <th>PRODUCT TYPE
+  </th>
+  <th>BRAND NAME
+  </th>
+  <th>More...
+  </th>
+          </tr>
+          <tr ng-repeat="item in $data">
+
+            <td data-title="'generic_name'" style="width:20%">{{item.openfda.generic_name[0]}}</td>
+            <td data-title="'product_type'">{{ item.openfda.product_type[0] }}</td>
+            <td data-title="'brand_name'">{{item.openfda.brand_name[0]}}</td>
+            <td data-title="'More'"><a  ng-click="itemDetail(item.set_id);">details...</a></td>
+
+          </tr>
+        </table>
+
+
+       {{drugLabelDetails}}
+
+
+      </div>
+
+
+
+    </div>
+</div>
+</snap-content>
+</div>

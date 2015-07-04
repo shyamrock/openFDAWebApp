@@ -28,6 +28,39 @@ module.exports = {
       });
   },
 
+  drugLabels: function (req, res) {
+    var api_key=sails.config.globals.openFDAAPI_KEY;
+    var requestUrl = 'https://api.fda.gov/drug/label.json?search=effective_time:[20090601+TO+20140731]&limit=100';
+    // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
+    console.log("request url-->"+requestUrl);
+    var returnJson ="";
+    request(requestUrl, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log("body returned");
+        returnJson = body;
+        res.send(returnJson);
+      }
+
+    })
+  },
+  drugLabelDetailed: function (req, res) {
+    var api_key=sails.config.globals.openFDAAPI_KEY;
+    var item = req.query.item;
+
+    var requestUrl = 'https://api.fda.gov/drug/label.json?search=set_id:"'+item+'"';
+    // https://api.fda.gov/drug/label.json?search=set_id:"'+item+'"
+    console.log("request url-->"+requestUrl);
+    var returnJson ="";
+    request(requestUrl, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log("body returned");
+        returnJson = body;
+        res.send(returnJson);
+      }
+
+    })
+  },
+
   /**
    * `QueryController.search()`
    */
