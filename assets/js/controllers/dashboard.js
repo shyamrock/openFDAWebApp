@@ -13,9 +13,6 @@ angular.module('openFDA')
 
     $scope.submit = function() {
 
-      alert($scope.username);
-
-
       return false;
     }
 
