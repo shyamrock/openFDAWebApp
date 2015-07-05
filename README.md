@@ -2,4 +2,4 @@
 
 Web Application to search Food, Device and Drug Recall Data set.
 
-[Read more words!](docs/more_words.md)
+[Project Plan and Tasks View](docs/openfdadataqueryui-gantt.pdf)
