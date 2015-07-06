@@ -150,22 +150,22 @@
 
         <table ng-table="tableParams" show-filter="true" class="table ng-table-vml-responsive" export-csv="csv">
           <tr ng-repeat="user in $data">
-            <td data-title="'recall_number'" sortable="'recall_number'">
+            <td data-title="'Recall Number'" sortable="'recall_number'">
               {{user.recall_number}}
             </td>
-            <td data-title="'report_date'" sortable="'report_date'" >
+            <td data-title="'Report Date'" sortable="'report_date'" >
               {{user.report_date}} <!--ng-init="model =user.report_date"<span  ng-init="dat =model+'T00:00:00'">{{ dat  | date:'dd/MM/yyyy' }}</span>-->
             </td>
-            <td data-title="'reason_for_recall'" sortable="'reason_for_recall'">
+            <td data-title="'Reason for Recall'" sortable="'reason_for_recall'">
               {{user.reason_for_recall}}
             </td>
-            <td data-title="'city'" sortable="'city'" filter="{ 'city': 'text' }">
+            <td data-title="'City'" sortable="'city'" filter="{ 'city': 'text' }">
               {{user.city}}
             </td>
-            <td data-title="'state'" sortable="'state'" >
+            <td data-title="'State'" sortable="'state'" >
               {{user.state}}
             </td>
-            <td data-title="'classification'" sortable="'classification'">
+            <td data-title="'Classification'" sortable="'classification'">
               {{user.classification}}
             </td>
           </tr>
