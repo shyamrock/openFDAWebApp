@@ -3,10 +3,11 @@ angular.module('openFDA').controller('SearchTrendsController', function($scope, 
 
 
   function init(){
+    $scope.loading = true;
 
     openFDASearchTrendsService.getFeedbackPaged().then(function(data){
       $scope.searchTrendsResult=data;
-
+      $scope.loading = false;
 
       var dataa= $scope.searchTrendsResult.data;
       $scope.trends=dataa;

@@ -111,6 +111,8 @@ $scope.message ="openFDA Data Set View";
 
 
   $scope.searchText = function(skip,current) {
+    $scope.loading = true;
+
     $scope.foods="";
     $scope.meta="";
     $scope.error="notfound";
@@ -124,6 +126,7 @@ $scope.message ="openFDA Data Set View";
       params: {selectType: selectType,searchItem:searchItem, searchLimit:20,skip:skip}
     }).
       success(function(data, status, headers, config) {
+        $scope.loading = false;
         $scope.error="found";
         $scope.meta=data.meta;
         $scope.dataset = data.results;
@@ -158,7 +161,7 @@ $scope.message ="openFDA Data Set View";
         alert("No results matching this term");
         $scope.error= data;
         $scope.foods="";
-
+        $scope.loading = false;
       });
 
   }

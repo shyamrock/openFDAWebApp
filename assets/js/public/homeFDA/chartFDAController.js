@@ -11,6 +11,7 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
 
 
   $scope.submit = function() {
+    $scope.loading = true;
 
     $scope.result = "";
     $scope.formatedVmlAray = [];
@@ -56,7 +57,7 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
 
         ]
 
-
+        $scope.loading = false;
         angular.forEach($scope.result, function (result) {
           var vml = [];
           var datetime1 = result.time
@@ -118,10 +119,14 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
         //$scope.chartConfig.series.push( $scope.formatedVmlAray[1]);
         //$scope.chartConfig.series.push( $scope.formatedVmlAray[2]);
         $scope.chartConfig.series=[];
-        $scope.chartConfig.series.push( {name:"2012",data:rnd});
-        $scope.chartConfig.series.push( {name:"2013",data:rnd1});
-        $scope.chartConfig.series.push( {name:"2014",data:rnd2});
-        $scope.chartConfig.series.push( {name:"2015",data:rnd3});
+        $scope.chartConfig.series.push( {name:"2012-2013",data:rnd});
+        $scope.chartConfig.series.push( {name:"2013-2014",data:rnd1});
+        $scope.chartConfig.series.push( {name:"2014-2015",data:rnd2});
+        $scope.chartConfig.series.push( {name:"2015-2016",data:rnd3});
+      }).
+      error(function(data, status, headers, config) {
+        alert("No results matching this term");
+        $scope.loading = false;
       });
 
   }
