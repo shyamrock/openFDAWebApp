@@ -1,0 +1,25 @@
+FROM node:0.10
+
+#install sails
+RUN npm install -g sails
+
+
+#Installing Git
+RUN mkdir /data/git-tmp
+WORKDIR /data/git-tmp
+RUN apt-get update
+		sudo apt-get install build-essential libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip && \
+		wget https://github.com/git/git/archive/v1.9.4.tar.gz && \
+		cd git-1.9.4 && \
+		make prefix=/usr/local all && \
+		sudo make prefix=/usr/local instal && \
+		rm /data/git-tmp -Rvf
+
+# Setup Git
+RUN git config --global user.name "shyam nagarajan" && \
+		git config --global user.email "shyam@objectstream.com"
+
+CMD ["/bin/bash", "--login"]
+
+
+

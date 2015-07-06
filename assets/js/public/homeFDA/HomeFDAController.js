@@ -115,8 +115,8 @@ $scope.message ="openFDA Data Set View";
     $scope.meta="";
     $scope.error="notfound";
     $scope.currentPage=current
-    var selectType=$scope.selectType;//food,drug,etc
-    var searchItem=$scope.searchItem; //"ice cream";
+    var selectType=$scope.selectType;//food,drug,device
+    var searchItem=$scope.searchItem; //"ice cream, spinach";
     var skip=skip;
     var url="query/search";
     $http({
