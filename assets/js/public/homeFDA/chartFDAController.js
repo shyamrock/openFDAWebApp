@@ -204,10 +204,10 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
     //  $scope.chartConfig.series.push( $scope.formatedVmlAray[0]);
       //$scope.chartConfig.series.push( $scope.formatedVmlAray[1]);
       //$scope.chartConfig.series.push( $scope.formatedVmlAray[2]);
-      $scope.chartConfig.series.push( {name:"2012",data:rnd});
-      $scope.chartConfig.series.push( {name:"2013",data:rnd1});
-      $scope.chartConfig.series.push( {name:"2014",data:rnd2});
-      $scope.chartConfig.series.push( {name:"2015",data:rnd3});
+      $scope.chartConfig.series.push( {name:"2012-2013",data:rnd});
+      $scope.chartConfig.series.push( {name:"2013-2014",data:rnd1});
+      $scope.chartConfig.series.push( {name:"2014-2015",data:rnd2});
+      $scope.chartConfig.series.push( {name:"2015-2016",data:rnd3});
     });
 
 
@@ -268,22 +268,23 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
 
       xAxis: {
         dateTimeLabelFormats: { // don't display the dummy year
-          month: '%e.%B ',
+          month: '%e.%B '
           /*year: ['%y']*/
         },
         type: 'datetime',
         title: {
           text: "DATE/YEAR"
-        },
+        }
 
       },
     series:[ ],
     title: {
       text: 'Food Recall with Ice Cream for Reason for Recall'
-    },
-    subtitle: {
-      text: 'Irregular time count in Graph'
-    },
+    }
+    ,
+    //subtitle: {
+    //  text: 'Irregular time count in Graph'
+    //},
 
     loading: false
   }
