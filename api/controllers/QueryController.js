@@ -30,7 +30,7 @@ module.exports = {
 
   drugLabels: function (req, res) {
     var api_key=sails.config.globals.openFDAAPI_KEY;
-    var requestUrl = 'https://api.fda.gov/drug/label.json?search=effective_time:[20090601+TO+20140731]&limit=100';
+    var requestUrl = 'https://api.fda.gov/drug/label.json?api_key='+api_key+'&search=effective_time:[20090601+TO+20140731]&limit=100';
     // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
     console.log("request url-->"+requestUrl);
     var returnJson ="";
@@ -47,7 +47,7 @@ module.exports = {
     var api_key=sails.config.globals.openFDAAPI_KEY;
     var item = req.query.item;
 
-    var requestUrl = 'https://api.fda.gov/drug/label.json?search=set_id:"'+item+'"';
+    var requestUrl = 'https://api.fda.gov/drug/label.json?api_key='+api_key+'&search=set_id:"'+item+'"';
     // https://api.fda.gov/drug/label.json?search=set_id:"'+item+'"
     console.log("request url-->"+requestUrl);
     var returnJson ="";
