@@ -99,6 +99,10 @@
                 <tab-heading><h3>{{details[0].openfda.generic_name[0]}}</h3></tab-heading>
                 <a ui-sref="drugLabels" class="btn btn-primary" ><i class="fa fa-arrow-left"></i> Back to list  </a>
 
+                <div ng-show="loading" class="loading">LOADING...
+                  <i class="fa fa-refresh fa-spin"></i>
+                </div>
+
                 <table  class="table" style="text-align: left;font-size: 16px !important;" ng-repeat="detail in details">
 
 

@@ -34,6 +34,7 @@ angular.module('openFDA').controller('DrugLabelingController', function( $rootSc
 
   }
   $scope.itemDetail = function(items) {
+    $scope.loading = true;
     var item=items;
     $scope.drugLabelDetails="";
 
@@ -48,8 +49,11 @@ angular.module('openFDA').controller('DrugLabelingController', function( $rootSc
         $rootScope.details="";
         $rootScope.details = $scope.drugLabelDetails;
         $location.path('/dashboard/drugLabelDetailed');
+      }).
+      error(function(data, status, headers, config) {
+        alert("No results matching this term");
+        $scope.loading = false;
       });
-
 
 
   }

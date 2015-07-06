@@ -67,7 +67,9 @@
 
       <div   class="col-lg-12 col-xs-12" style="padding:0px 0px !important" >
         <h3 style="text-align: center">This page shows the recent search terms from this site</h3>
-
+        <div ng-show="loading" class="loading">LOADING...
+          <i class="fa fa-refresh fa-spin"></i>
+        </div>
         <a class="btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
 
         <table ng-table="tableParams" class="table " class="table ng-table-vml-responsive" export-csv="csv" style="text-align: center">
