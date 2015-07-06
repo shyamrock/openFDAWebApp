@@ -290,7 +290,7 @@ angular.module('openFDA').controller('ChartController', function($scope, $locati
   }
 
 
-  console.log( $scope.formatedVmlAray);
+
 
 //for(var i=0; i<$scope.serieses.length;i++) {
 //  $scope.chartConfig.series.push($scope.serieses[i]);

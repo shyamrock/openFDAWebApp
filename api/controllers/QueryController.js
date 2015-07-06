@@ -32,11 +32,11 @@ module.exports = {
     var api_key=sails.config.globals.openFDAAPI_KEY;
     var requestUrl = 'https://api.fda.gov/drug/label.json?api_key='+api_key+'&search=effective_time:[20090601+TO+20140731]&limit=100';
     // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
-    console.log("request url-->"+requestUrl);
+    //console.log("request url-->"+requestUrl);
     var returnJson ="";
     request(requestUrl, function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        console.log("body returned");
+        //console.log("body returned");
         returnJson = body;
         res.send(returnJson);
       }
@@ -49,11 +49,11 @@ module.exports = {
 
     var requestUrl = 'https://api.fda.gov/drug/label.json?api_key='+api_key+'&search=set_id:"'+item+'"';
     // https://api.fda.gov/drug/label.json?search=set_id:"'+item+'"
-    console.log("request url-->"+requestUrl);
+
     var returnJson ="";
     request(requestUrl, function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        console.log("body returned");
+
         returnJson = body;
         res.send(returnJson);
       }
@@ -80,7 +80,7 @@ module.exports = {
 
      var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?api_key='+api_key+'&search=reason_for_recall:"'+searchItem+'"&limit='+searchLimit+'&skip='+skip;
      // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
-    console.log("request url-->"+requestUrl);
+
     var returnJson ="";
     request(requestUrl, function (error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -99,7 +99,7 @@ module.exports = {
           searchDate:new Date()
         }).exec(function (err, event) {
           if (err) {
-            console.log("Error: "+err);
+
             //return res.status(403);
           }
           //return res.json(event);
@@ -138,7 +138,7 @@ module.exports = {
 
     var requestUrl = 'https://api.fda.gov/'+selectType+'/enforcement.json?search=reason_for_recall:"'+searchItem+'"&count=report_date';
     // 'food/enforcement.json?search=reason_for_recall="ice cream"&limit=20';
-    console.log("request url-->"+requestUrl);
+    //console.log("request url-->"+requestUrl);
     var returnJson ="";
     request(requestUrl, function (error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -156,7 +156,7 @@ module.exports = {
           searchDate:new Date()
         }).exec(function (err, event) {
           if (err) {
-            console.log("Error: "+err);
+            //console.log("Error: "+err);
           }
         });
 

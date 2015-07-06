@@ -158,7 +158,7 @@ $scope.message ="openFDA Data Set View";
         alert("No results matching this term");
         $scope.error= data;
         $scope.foods="";
-        console.log("Error in frontend app :"+data);
+
       });
 
   }
