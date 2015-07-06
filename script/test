@@ -2,4 +2,4 @@
 npm install connect-redis@1.4.5
 
 ./node_modules/.bin/mocha ./test/*.js
-./node_modules/.bin/protractor ./test/e2e/conf.js
+
