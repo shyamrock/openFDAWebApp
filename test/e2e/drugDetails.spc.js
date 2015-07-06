@@ -1,5 +1,5 @@
-describe('Given I am opening the Drug Labeling menu',function(){
-    describe('When I pull the basepage',function(){
+describe('Given I am reviewing the searchTrends',function(){
+    describe('When I pull the search trends page',function(){
       beforeEach(function(){
         //Assemble
         browser.get('http://104.236.11.72/#/dashboard/trends');
