@@ -85,7 +85,7 @@ Here is the link to [stories].
 
 Please	refer to	our [approach] to UI and UX	with Human	Centered	Design.
 
-Please refer to this link to view the [resposive] web design of the site.
+Please refer to this link to view the [responsive] web design of the site.
 
 We executed the remaining tasks as mentioned in Pool Two approach.
 
