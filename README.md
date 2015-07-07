@@ -8,7 +8,7 @@ The	following	documents	our	development	approach	once	we	initiated	resources	to	
  - Technical	Architect - Shyam	Nagarajan
  - Front End Web Developer -Depak	Sabu
  - Dev Ops	Engineer - Nabil	Soulane
- - Backend Web Develope- Vimal	Kovath
+ - Backend Web Developer- Vimal	Kovath
   
 ##### Our	Technology	Stack/Framework
 ######Development	technology and Tools:
@@ -67,8 +67,8 @@ Open	terminal	in	Mac	or	Linux;	Command	Line	on	Windows	Systems
  - Technical	Architect - Shyam	Nagarajan
  - Front End Web Developer -Depak	Sabu
  - Dev Ops Engineer - Nabil	Soulane
- - Backend Web Develope- Vimal	Kovath
- - Interaction	Designer- Johnson Eyadiel
+ - Backend Web Developer- Vimal	Kovath
+ - Interaction Designer- Johnson Eyadiel
  - Visual	Designer- Martin	Mathew
 
 Define	the	Site	Use:
