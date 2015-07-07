@@ -1,4 +1,4 @@
-# openFDAWebApp from [Objectstream, Inc.]
+# openFDA-Web App from [Objectstream, Inc.]
 
 Objectstream	began	working	on	creating	a useful Data query website using openFDA API data sets	on	June 22 2015.
 ###Link to [Prototype]
