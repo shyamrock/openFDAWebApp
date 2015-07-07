@@ -41,6 +41,12 @@ For	source	control	management,	we	used GitHub	repository as our configuration ma
 ######Here is the link to the [Docker file]	hosted	on	the	Docker	hub.
 ######Please refer to [Docker docs] for more details.	
 
+Assuming	Docker	is	installed	in	your	machine,	the	following commands	will	run	the application	:
+
+```sh 
+   docker pull	shyamos/openfda_node_webapp
+   docker run -d -p 80:1337 shyamos/openfda_node_webapp sails lift
+```
 
 
 License
