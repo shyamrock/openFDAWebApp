@@ -4,7 +4,7 @@ Objectstream	began	working	on	creating	a useful Data query website using openFDA
 ###Link to [Prototype]
 ###Approach	for	Pool	Two	– Development	Pool
 The	following	documents	our	development	approach	once	we	initiated	resources	to	create	our	prototype. We are	following	the	U.S.	Digital	Service	Playbook as the reference guideline for executing this project:
- - Product Owner		- Vishal	Maheshwari
+ - Product Manager		- Vishal	Maheshwari
  - Technical	Architect - Shyam	Nagarajan
  - Front End Web Developer -Depak	Sabu
  - DevOps	Engineer - Nabil	Soulane
@@ -69,7 +69,7 @@ This	prototype	as	been	designed	to	be	easily	deployed	on	any	other	servers	or	lo
 
 ###Approach	for	Pool	Three	– Full	Stack	Pool
 
- - Product Owner - Vishal	Maheshwari
+ - Product Manager - Vishal	Maheshwari
  - Technical	Architect - Shyam	Nagarajan
  - Front End Web Developer -Depak	Sabu
  - DevOps Engineer - Nabil	Soulane
