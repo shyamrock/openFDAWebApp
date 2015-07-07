@@ -52,18 +52,18 @@ We	continuously	monitored	the	deployment	infrastructure	using	our	Nagios	Monitor
 This	prototype	as	been	designed	to	be	easily	deployed	on	any	other	servers	or	local	machines.	This	assumes	that	node.js	is	and	Git	is	installed. Here are	the	detailed steps.
 
 Open	terminal	in	Mac	or	Linux;	Command	Line	on	Windows	Systems
-1.	Install	nodejs:	https://nodejs.org/download/
-2.	Install	Git:	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-3.	Run	“git clone:	https://github.com/shyamrock/openFDAWebApp.git”.
-4.	Cd	“openFDAWebApp”.
-5.	Npm	install.	Run	this	command	with	Sudo	on	a	Mac	or	in	Linux.
-6.	Run	“sails	lift”.
-7.	Open the	application	in	a	browser	at	http://localhost:1317.
+ - Install	nodejs:	https://nodejs.org/download/
+ - Install	Git:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+ - Run	“git clone:	https://github.com/shyamrock/openFDAWebApp.git”.
+ - cd	“openFDAWebApp”.	
+ - Npm	install.	Run	this	command	with	Sudo	on	a	Mac	or	in	Linux.
+ - Run	“sails	lift”.
+ - Open the	application	in	a	browser	at	http://localhost:1317.
 
 
 ###Approach	for	Pool	Three	– Full	Stack	Pool
 
- - Product	owner	and	lead		- Vishal	Maheshwari
+ - Product	owner and	lead - Vishal	Maheshwari
  - Technical	Architect - Shyam	Nagarajan
  - Front	End	Developer -Depak	Sabu
  - Dev	Ops	Engineer - Nabil	Soulane
