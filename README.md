@@ -95,10 +95,7 @@ Please refer to this link to view the [responsive] web design of the site.
 
 We executed the remaining tasks as mentioned in Pool Two approach.
 
-License
-----
 
-MIT
 
 [Objectstream, Inc.]: http://objectstream.com
 [Prototype]:http://104.236.11.72/
