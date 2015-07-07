@@ -83,7 +83,9 @@ Conclusions:
 
 Here is the link to [stories].
 
-Please	refer to	our [approach] to UI and UX	with Human	Centered	Design
+Please	refer to	our [approach] to UI and UX	with Human	Centered	Design.
+
+Please refer to this link to view the [resposive] web design of the site.
 
 We executed the remaining tasks as mentioned in Pool Two approach.
 
@@ -101,3 +103,4 @@ MIT
 [scrum meeting notes]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ScrumMeetingNotes.pdf
 [stories]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/OpenFDA_User%20Stories.pdf
 [approach]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/%20UX%20and%20UI%20design%20for%20OpenFDA.pdf
+[responsive]:
