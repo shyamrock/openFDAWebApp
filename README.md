@@ -2,7 +2,7 @@
 
 Objectstream	began	working	on	creating	a useful Data query website using openFDA API data sets	on	June 22 2015.
 ###Link to [Prototype]
-###Approach	for	Pool	Two	– Developer	Pool
+###Approach	for	Pool	Two	– Development	Pool
 The	following	documents	our	development	approach	once	we	initiated	resources	to	create	our	prototype. We are	following	the	U.S.	Digital	Service	Playbook as the reference guideline for executing this project:
  - Product Owner		- Vishal	Maheshwari
  - Technical	Architect - Shyam	Nagarajan
@@ -28,15 +28,19 @@ The	following	documents	our	development	approach	once	we	initiated	resources	to	
 ```
 The above technologies was chosen to enable a clear seperation of client and server; where all the calls are made through RESTful webservices. This allows for future enablement to mobile devices. Redis from Redis lab (SaaS) is used for session store sperate from the production server and MondoDB from Mongolab(SaaS) is used for data persistence.
 
-#####We used DigitalOcean IaaS for our deployment infrastructure.
+######We used DigitalOcean IaaS as our deployment infrastructure.
 
-We	split	this	project	into	two	sprints.		Redmine	was	used to implement	our	Agile development	approach.		All	development	was	done iteratively	as per	scrum	practice.		Here’s	is the [product	backlog] and	[scrum meeting notes]. Daily Sprint (stand up)	meetings	and	Sprint retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	etc.)	with	the	technology	build. These	issues	were	captured	in	the	Redmine	project management	system	and	then	closed	by	our	team.
+We	split	this	project	into	two	sprints.		Redmine	was	used to track and recors 	our	Agile development	approach All	development	was	done iteratively	as per	scrum	practice.		Here’s	is the [product	backlog] and	[scrum meeting notes]. Daily Sprint (stand up)	meetings	and	Sprint retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	etc.)	with	the	technology	build. These	issues	were	captured	in	the	Redmine	project management	system	and	then	closed	by	our	team.
 
-We used	Jenkins	CI for the continuous	integration	and	continuous	deployment	of	the	GitHub	code	files.		Additionally,	a	GitHub	plugin	for	Jenkins	CI	and	the	web	hook	component	of	GitHub	was	deployed	to automate	the	build	directly	from	GitHub.		
+The team wrote unit test classes for backend services. The end-to-end functional test for user testing was also writen and performed. The Jenkins CI server invoked those test case before deploying to server. Please refer to [testing approach].
+
+######We used	Jenkins	CI for the continuous	integration	and	continuous	deployment	of	the	GitHub	code	files.		
+Additionally,	a	GitHub	plugin	for	Jenkins	CI	and	the	web	hook	component	of	GitHub	was	deployed	to automate	the	build	directly	from	GitHub.		
 Here	is	a	[CI-CD document]	that explains in detail our	CI	and	CD	approach. DigitalOcean	IaaS	was	also	used	as	the	server	platform	to	host	the	CI	server.		
 
 
-For	source	control	management,	we	used GitHub	repository as our configuration management tool.		
+######For	source	control	management,	we	used GitHub	repository as our configuration management tool.	
+
 ######Docker	was	used	as	the	container	for	the	openFDA	prototype.		
 ######Here is the link to the [Docker file]	hosted	on	the	Docker	hub.
 ######Please refer to [Docker docs] for more details.	
@@ -47,7 +51,7 @@ Assuming	Docker	is	installed	in	your	machine,	the	following commands	will	run	th
    docker pull	shyamos/openfda_node_webapp
    docker run -d -p 80:1337 shyamos/openfda_node_webapp sails lift
 ```
-We	continuously	monitored	the	deployment	infrastructure	using	our	Nagios	Monitoring	Server	(open	source	server), which also	runs	on	the	Digital	Ocean	IaaS server.		Here	is	a	link	showing	the	results	of	the	monitoring.		
+We	continuously	monitored	the	deployment	infrastructure	using	our	Icinga	Monitoring	Server	(open	source enterprise montoring), which also	runs	on	the	Digital	Ocean	IaaS server.		Here	is	a	link	to [icinga display] showing	the	results	of	the	monitoring and alerts the users through email on any server issues.		
 
 This	prototype	as	been	designed	to	be	easily	deployed	on	any	other	servers	or	local	machines.	This	assumes	that	node.js	is	and	Git	is	installed. Here are	the	detailed steps.
 
@@ -104,3 +108,5 @@ MIT
 [stories]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/OpenFDA_User%20Stories.pdf
 [approach]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/%20UX%20and%20UI%20design%20for%20OpenFDA.pdf
 [responsive]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/RWD%20Sample.pdf
+[icinga display]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/IcingaMonitoringServer.pdf
+[testing approach]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/TestingApproach.pdf
