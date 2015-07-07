@@ -26,7 +26,7 @@ The	following	documents	our	development	approach	once	we	initiated	resources	to	
   Backend Server Technologies: Node JS, SailsJS
   Database: Redis for session store and MongoDB for model persistence
 ```
-The above technologies was chosen to enable a clear seperation of client and server; where all the calls are made through RESTful webservices. This allows for future enablement to mobile devices.
+The above technologies was chosen to enable a clear seperation of client and server; where all the calls are made through RESTful webservices. This allows for future enablement to mobile devices. Redis from Redis lab (SaaS) is used for session store sperate from the production server and MondoDB from Mongolab(SaaS) is used for data persistence.
 
 #####We used DigitalOcean IaaS for our deployment infrastructure.
 
@@ -46,4 +46,4 @@ For	source	control	management,	we	used GitHub	repository as our configuration ma
 [Docker file]:https://registry.hub.docker.com/u/shyamos/openfda_node_webapp/
 [Docker docs]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ContainerDeployment-Docker.pdf
 [product	backlog]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/openfdadataqueryui-gantt.pdf
-[scrum	meeting	notes]:to be added
+[scrum	meeting	notes]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ScrumMeetingNotes.pdf
