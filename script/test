@@ -2,3 +2,4 @@
 npm install connect-redis@1.4.5
 
 ./node_modules/.bin/mocha ./test/*.js
+
