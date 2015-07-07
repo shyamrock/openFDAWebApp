@@ -16,7 +16,7 @@ This document presents our development approach, once we initiated this project.
 
 ```sh 
   Agile Project Management: Redmine
-  Testing Framework: Protractor,Mocha,Chai,Jasmine
+  Testing Framework: Protractor,Mocha,Chai,Jasmine, Selenium Web Driver
   Development Tools:Sublime Text 3
   
 ```
@@ -26,13 +26,13 @@ This document presents our development approach, once we initiated this project.
 ```sh 
   Frontend client Technologies: HTML5, CSS3, Bootstrap 3, Angular JS
   Backend Server Technologies: Node JS, SailsJS
-  Database: Redis for session store and MongoDB for model persistence
+  Database: Redis session store and MongoDB model persistence
 ```
-These technologies were chosen to enable a clear separation of client and server, in which all the calls are made through RESTful webservices to backend servers. This allows for future enablement to mobile devices. Redis from Redis lab (SaaS) is used for session store sperate from the production server and MondoDB from Mongolab(SaaS) is used for data persistence.
+These technologies were chosen to enable a clear separation of client and server, in which all the calls are made through RESTful webservices to backend servers. This allows for future enablement to mobile devices. Redis from Redis lab (SaaS) is used for session store sperate from the production server and MondoDB from Mongolab(SaaS) free-tier is used for data persistence.
 
 ######We used DigitalOcean IaaS as our deployment infrastructure.
 
-We	split	this	project	into	two	sprints.		Redmine	was	used to track and recors 	our	Agile development	approach All	development	was	done iteratively	as per	scrum	practice.		Here’s	is the [product	backlog] and	[scrum meeting notes]. Daily Sprint (stand up)	meetings	and	Sprint retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	etc.)	with	the	technology	build. These	issues	were	captured	in	the	Redmine	project management	system	and	then	closed	by	our	team.
+We	split	this	project	into	two	sprints.		Redmine	was	used to track and recodrs 	our	Agile development	approach All	development	was	done iteratively	as per	scrum	practice.		Here’s	is the [product	backlog] and	[scrum meeting notes]. Daily Sprint (stand up)	meetings	and	Sprint retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	etc.)	with	the	technology	build. These	issues	were	captured	in	the	Redmine	project management	system	and	then	closed	by	our	team.
 
 The team wrote unit test classes for backend services. The end-to-end functional test for user testing was also writen and performed. The Jenkins CI server invoked those test case before deploying to server. Please refer to the [testing approach].
 
