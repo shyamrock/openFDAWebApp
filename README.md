@@ -103,4 +103,4 @@ MIT
 [scrum meeting notes]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ScrumMeetingNotes.pdf
 [stories]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/OpenFDA_User%20Stories.pdf
 [approach]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/%20UX%20and%20UI%20design%20for%20OpenFDA.pdf
-[responsive]:
+[responsive]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/RWD%20Sample.pdf
