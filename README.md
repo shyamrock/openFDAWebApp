@@ -7,7 +7,7 @@ The	following	documents	our	development	approach	once	we	initiated	resources	to	
  - Product Owner		- Vishal	Maheshwari
  - Technical	Architect - Shyam	Nagarajan
  - Front End Web Developer -Depak	Sabu
- - Dev Ops	Engineer - Nabil	Soulane
+ - DevOps	Engineer - Nabil	Soulane
  - Backend Web Developer- Vimal	Kovath
   
 ##### Our	Technology	Stack/Framework
@@ -66,7 +66,7 @@ Open	terminal	in	Mac	or	Linux;	Command	Line	on	Windows	Systems
  - Product Owner - Vishal	Maheshwari
  - Technical	Architect - Shyam	Nagarajan
  - Front End Web Developer -Depak	Sabu
- - Dev Ops Engineer - Nabil	Soulane
+ - DevOps Engineer - Nabil	Soulane
  - Backend Web Developer- Vimal	Kovath
  - Interaction Designer- Johnson Eyadiel
  - Visual	Designer- Martin	Mathew
