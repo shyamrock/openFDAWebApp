@@ -2,7 +2,7 @@
 
 Objectstream	began	working	on	creating	a useful Data query website using openFDA API data sets	on	June 22 2015.
 ###Link to [Prototype]
-###Approach	for	Pool	Two	– Developer	Pool
+###Approach	for	Pool	Two	– Development	Pool
 The	following	documents	our	development	approach	once	we	initiated	resources	to	create	our	prototype. We are	following	the	U.S.	Digital	Service	Playbook as the reference guideline for executing this project:
  - Product Owner		- Vishal	Maheshwari
  - Technical	Architect - Shyam	Nagarajan
