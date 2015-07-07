@@ -35,6 +35,12 @@ We	split	this	project	into	two	sprints.		Redmine	was	used to implement	our	Agile
 We used	Jenkins	CI for the continuous	integration	and	continuous	deployment	of	the	GitHub	code	files.		Additionally,	a	GitHub	plugin	for	Jenkins	CI	and	the	web	hook	component	of	GitHub	was	deployed	to automate	the	build	directly	from	GitHub.		
 Here	is	a	[CI-CD document]	that explains in detail our	CI	and	CD	approach. DigitalOcean	IaaS	was	also	used	as	the	server	platform	to	host	the	CI	server.		
 
+
+For	source	control	management,	we	used GitHub	repository as our configuration management tool.		
+#####Docker	was	used	as	the	container	for	the	openFDA	prototype.		
+#####Here [Docker file]	hosted	on	the	Docker	hub.
+
 [Objectstream, Inc.]: http://objectstream.com
 [Prototype]:http://104.236.11.72/
 [CI-CD document]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ContinuousIntegrationandContinuousDevelopment.pdf
+[Docker file]:https://registry.hub.docker.com/u/shyamos/openfda_node_webapp/
