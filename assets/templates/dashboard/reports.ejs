@@ -105,11 +105,11 @@
 
         </div>
 
-        <div class="button-container col-lg-2 col-xs-4">
-          <button type="submit" class="btn login" style="color:#333!important ;padding: 10px 10px">Search  <i class="fa fa-search" ></i></button>
+        <div class="button-container col-lg-2 col-md-2 col-sm-3 col-xs-4">
+          <button type="submit" ng-disabled="!searchItem||searchItem.length<3" class="btn login" style="color:#333!important ;padding: 10px 10px">Search  <i class="fa fa-search" ></i></button>
         </div>
 
-
+<!--file-->
       </form>
       <div ng-show="loading" class="loading">LOADING...
         <i class="fa fa-refresh fa-spin"></i>
