@@ -47,7 +47,46 @@ Assuming	Docker	is	installed	in	your	machine,	the	following commands	will	run	th
    docker pull	shyamos/openfda_node_webapp
    docker run -d -p 80:1337 shyamos/openfda_node_webapp sails lift
 ```
+We	continuously	monitored	the	deployment	infrastructure	using	our	Nagios	Monitoring	Server	(open	source	server), which also	runs	on	the	Digital	Ocean	IaaS server.		Here	is	a	link	showing	the	results	of	the	monitoring.		
 
+This	prototype	as	been	designed	to	be	easily	deployed	on	any	other	servers	or	local	machines.	This	assumes	that	node.js	is	and	Git	is	installed. Here are	the	detailed steps.
+
+Open	terminal	in	Mac	or	Linux;	Command	Line	on	Windows	Systems
+1.	Install	nodejs:	https://nodejs.org/download/
+2.	Install	Git:	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+3.	Run	“git clone:	https://github.com/shyamrock/openFDAWebApp.git”.
+4.	Cd	“openFDAWebApp”.
+5.	Npm	install.	Run	this	command	with	Sudo	on	a	Mac	or	in	Linux.
+6.	Run	“sails	lift”.
+7.	Open the	application	in	a	browser	at	http://localhost:1317.
+
+
+###Approach	for	Pool	Three	– Full	Stack	Pool
+
+ - Product	owner	and	lead		- Vishal	Maheshwari
+ - Technical	Architect - Shyam	Nagarajan
+ - Front	End	Developer -Depak	Sabu
+ - Dev	Ops	Engineer - Nabil	Soulane
+ - Backend	Developer- Vimal	Kovath
+ - Interaction	Designer- Johnson Eyadiel
+ - Visual	Designer- Martin	Mathew
+
+Define	the	Site	Use:
+1. What	data	would	provide	the	most	immediate	impact	for	the	researchers?
+2. What	ways	the	data	should	be	displayed	in	order	to	easily	understand	the	
+information?
+Conclusions:
+1. Research	data	should	be	pulled	for	food,	device	and	drug	recalls.
+2. Data	should	report	across	multiple	timelines	(in	years)
+3. Researcher	should	be	able	to	enter	word(s),	phrase(s)	in	a	search	field	in	
+order	to	pull	the	data	of	interest
+4. Researcher	should	be	able	to	request	data	to	be	displayed	as	various	graphs	
+
+Here is the link to [stories].
+
+Please	refer to	our [approach] to UI and UX	with Human	Centered	Design
+
+We executed the remaining tasks as mentioned in Pool Two approach.
 
 License
 ----
@@ -61,3 +100,5 @@ MIT
 [CI-CD document]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ContinuousIntegrationandContinuousDevelopment.pdf
 [product backlog]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/openfdadataqueryui-gantt.pdf
 [scrum meeting notes]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ScrumMeetingNotes.pdf
+[stories]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/OpenFDA_User%20Stories.pdf
+[approach]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/%20UX%20and%20UI%20design%20for%20OpenFDA.pdf
