@@ -28,13 +28,13 @@ The	following	documents	our	development	approach	once	we	initiated	resources	to	
 ```
 The above technologies was chosen to enable a clear seperation of client and server; where all the calls are made through RESTful webservices. This allows for future enablement to mobile devices.
 
-#####We used Digitalocean Iaas for our deployment infrastructure.
+#####We used Digital Ocean Iaas for our deployment infrastructure.
 
-We	split	this	project	into	two	sprints.		Redmine	was	used	to	implement	our	Agile
-development	approach.		All	development	was	done	iteratively	as	per	scrum	practice.		
-Here’s	a	link	to	the	product	backlog and	scrum	meeting	notes.		Sprint	daily	meetings	
-and	Sprint	retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	
-etc.)		with	the	technology	build.		These	issues	were	captured	in	the	Redmine	
+We	split	this	project	into	two	sprints.		Redmine	was	used to implement	our	Agile
+development	approach.		All	development	was	done iteratively	as per	scrum	practice.		
+Here’s	a	link to	the	product	backlog and	scrum	meeting	notes.  Sprint	daily	meetings	
+and	Sprint retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	
+etc.)	with	the	technology	build. These	issues	were	captured	in	the	Redmine	
 management	system	and	then	closed	by	our	team.
 
 [Objectstream, Inc.]: http://objectstream.com
