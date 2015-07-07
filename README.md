@@ -28,13 +28,13 @@ The	following	documents	our	development	approach	once	we	initiated	resources	to	
 ```
 The above technologies was chosen to enable a clear seperation of client and server; where all the calls are made through RESTful webservices. This allows for future enablement to mobile devices.
 
-#####We used Digital Ocean Iaas for our deployment infrastructure.
+#####We used DigitalOcean Iaas for our deployment infrastructure.
 
 We	split	this	project	into	two	sprints.		Redmine	was	used to implement	our	Agile development	approach.		All	development	was	done iteratively	as per	scrum	practice.		Here’s	a	link to	the	product	backlog and	scrum	meeting	notes.  Sprint	daily	meetings	and	Sprint retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	etc.)	with	the	technology	build. These	issues	were	captured	in	the	Redmine	project management	system	and	then	closed	by	our	team.
 
-We	used	Jenkins	CI	for	the	continuous	integration	and	continuous	deployment	of	the	GitHub	code	files.		Additionally,	a	GitHub	plugin	for	Jenkins	CI	and	the	web	hook	component	of	GitHub	was	deployed	to automate	the	build	directly	from	GitHub.		
-Here	is	a	[CI_CD document]	that explains in detail our	CI	and	CD	approach. DigitalOcean	IaaS	was	also	used	as	the	server	platform	to	host	the	CI	server.		
+We used	Jenkins	CI for the continuous	integration	and	continuous	deployment	of	the	GitHub	code	files.		Additionally,	a	GitHub	plugin	for	Jenkins	CI	and	the	web	hook	component	of	GitHub	was	deployed	to automate	the	build	directly	from	GitHub.		
+Here	is	a	[CI-CD document]	that explains in detail our	CI	and	CD	approach. DigitalOcean	IaaS	was	also	used	as	the	server	platform	to	host	the	CI	server.		
 
 [Objectstream, Inc.]: http://objectstream.com
 [Prototype]:http://104.236.11.72/
-[CI_CD document]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ContinuousIntegrationandContinuousDevelopment.pdf
+[CI-CD document]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ContinuousIntegrationandContinuousDevelopment.pdf
