@@ -72,15 +72,14 @@ Open	terminal	in	Mac	or	Linux;	Command	Line	on	Windows	Systems
  - Visual	Designer- Martin	Mathew
 
 Define	the	Site	Use:
-1. What	data	would	provide	the	most	immediate	impact	for	the	researchers?
-2. What	ways	the	data	should	be	displayed	in	order	to	easily	understand	the	
-information?
+- What	data	would	provide	the	most	immediate	impact	for	the	researchers?
+- What	ways	the	data	should	be	displayed	in	order	to	easily	understand	the	information?
+
 Conclusions:
-1. Research	data	should	be	pulled	for	food,	device	and	drug	recalls.
-2. Data	should	report	across	multiple	timelines	(in	years)
-3. Researcher	should	be	able	to	enter	word(s),	phrase(s)	in	a	search	field	in	
-order	to	pull	the	data	of	interest
-4. Researcher	should	be	able	to	request	data	to	be	displayed	as	various	graphs	
+- Research	data	should	be	pulled	for	food,	device	and	drug	recalls.
+- Data	should	report	across	multiple	timelines	(in	years)
+- Researcher	should	be	able	to	enter	word(s),	phrase(s)	in	a search	field	in	order	to	pull	the	data	of	interest
+- Researcher	should	be	able	to	request	data	to	be	displayed	as	various	graphs	
 
 Here is the link to [stories].
 
