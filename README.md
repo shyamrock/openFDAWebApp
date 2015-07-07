@@ -30,12 +30,7 @@ The above technologies was chosen to enable a clear seperation of client and ser
 
 #####We used Digital Ocean Iaas for our deployment infrastructure.
 
-We	split	this	project	into	two	sprints.		Redmine	was	used to implement	our	Agile
-development	approach.		All	development	was	done iteratively	as per	scrum	practice.		
-Here’s	a	link to	the	product	backlog and	scrum	meeting	notes.  Sprint	daily	meetings	
-and	Sprint retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	
-etc.)	with	the	technology	build. These	issues	were	captured	in	the	Redmine	
-management	system	and	then	closed	by	our	team.
+We	split	this	project	into	two	sprints.		Redmine	was	used to implement	our	Agile development	approach.		All	development	was	done iteratively	as per	scrum	practice.		Here’s	a	link to	the	product	backlog and	scrum	meeting	notes.  Sprint	daily	meetings	and	Sprint retrospectives	were	both	employed	to	identify	issues	(bugs,	to	do	items,	etc.)	with	the	technology	build. These	issues	were	captured	in	the	Redmine	project management	system	and	then	closed	by	our	team.
 
 We	used	Jenkins	CI	for	the	continuous	integration	and	continuous	deployment	of	the	GitHub	code	files.		Additionally,	a	GitHub	plugin	for	Jenkins	CI	and	the	web	hook	component	of	GitHub	was	deployed	to automate	the	build	directly	from	GitHub.		
 Here	is	a	[CI_CD document]	that explains in detail our	CI	and	CD	approach. DigitalOcean	IaaS	was	also	used	as	the	server	platform	to	host	the	CI	server.		
