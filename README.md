@@ -26,7 +26,7 @@ The	following	documents	our	development	approach	once	we	initiated	resources	to	
   Backend Server Technologies: Node JS, SailsJS
   Database: Redis for session store and MongoDB for model persistence
 ```
-The above technology was chosen to have a clear seperation of client and server where all the calls are made through REST Webservices. This allows for future enablement for mobile devices.
+The above technologies was chosen to enable a clear seperation of client and server; where all the calls are made through RESTful webservices. This allows for future enablement to mobile devices.
 
 [Objectstream, Inc.]: http://objectstream.com
 [Prototype]:http://104.236.11.72/
