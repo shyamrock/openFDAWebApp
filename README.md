@@ -46,4 +46,4 @@ Please refer to [Docker docs] for more details.
 [Docker file]:https://registry.hub.docker.com/u/shyamos/openfda_node_webapp/
 [Docker docs]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/ContainerDeployment-Docker.pdf
 [product	backlog]:https://github.com/shyamrock/openFDAWebApp/blob/master/docs/openfdadataqueryui-gantt.pdf
-[scrum	meeting	notes]:to be added
+
