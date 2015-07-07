@@ -39,7 +39,7 @@ Here	is	a	[CI-CD document]	that explains in detail our	CI	and	CD	approach. Digit
 For	source	control	management,	we	used GitHub	repository as our configuration management tool.		
 #####Docker	was	used	as	the	container	for	the	openFDA	prototype.		
 #####Here is the link to the [Docker file]	hosted	on	the	Docker	hub.
-Please refer to [Docker docs] for more details.	
+#####Please refer to [Docker docs] for more details.	
 
 [Objectstream, Inc.]: http://objectstream.com
 [Prototype]:http://104.236.11.72/
